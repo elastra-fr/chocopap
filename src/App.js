@@ -1,10 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+
+const Header =()=>{
+
+return(
+<>
+<header>
+<a><img src=''></img></a>
+<ul>
+<li><a>Accueuil</a></li> 
+<li><a>Boutique</a></li>
+</ul>
+<a><img></img></a>
+
+</header>
+
+
+
+</>
+
+
+
+
+);
+
+};
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Bienvenue dans le projet ChocoPap</h1>
+      
+      <Header/>
+
+
+
     </div>
   );
 }
