@@ -9,7 +9,7 @@ return(
 <header>
 <a><img src=''></img></a>
 <ul>
-<li><a>Accueuil</a></li> 
+<li><a>Accueil</a></li> 
 <li><a>Boutique</a></li>
 </ul>
 <a><img></img></a>
