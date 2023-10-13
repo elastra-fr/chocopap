@@ -1,5 +1,22 @@
 
 import './App.css';
+import cartIc from './images/cart.svg'
+import './components/Cart'
+import Cart from './components/Cart'
+import Carousel from './components/Carousel'
+
+
+/*const Panier=()=>{
+return(
+<div>
+  <a><img className='icCart' src={cart} alt='Panier'/><span></span></a>
+  <span>2</span>
+</div>
+
+);
+
+
+}*/
 
 
 const Header =()=>{
@@ -7,21 +24,17 @@ const Header =()=>{
 return(
 <>
 <header id='mainHeader'>
-<img src={require("./images/logo.png")} alt='Logo Choco Pap'/>
+<a><img className='logo' src={require("./images/logo.png")} alt='Logo Choco Pap'/></a>
 <ul>
 <li><a>Accueil</a></li> 
 <li><a>Boutique</a></li>
 </ul>
-<a><img></img></a>
+<Cart src={cartIc}/>
+
 
 </header>
 
-
-
 </>
-
-
-
 
 );
 
@@ -47,18 +60,30 @@ return(
 </div>
 
 <div>
-
   
+</div>
+
+</footer>
+
+);
+
+}
+
+
+
+
+const MainContent=()=>{
+return(
+
+<div>
+<Carousel/>
+
 </div>
 
 
 
-</footer>
-
-
 
 );
-
 
 
 }
@@ -70,6 +95,7 @@ function App() {
       
       <Header/>
 
+<MainContent/>
 
     <Footer/>
     </div>
