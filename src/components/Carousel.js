@@ -8,7 +8,7 @@ const CurrentImg=(props)=>{
 
 return(
 
-<img className='imgAcc' src={props.src} alt='Acceuil 1'/>
+<img className='imgAcc' src={props.src} alt='Accueil 1'/>
 
 );
 
@@ -24,18 +24,38 @@ return(
 
 const Carousel=()=>{
 
-    const [toShow, setToShow]=React.useState('');   
+    const [toShow, setToShow]=React.useState(Acc1);   
+    //setToShow(Acc1);
 
-    function handleClick(){
+    function handleClick(bt,e){
+       e.preventDefault();
+    //console.log(bt);
+switch(bt){
+case 0:
+    setToShow(Acc1);
+break;
 
-        setToShow(Acc2);
+case 1:
+    setToShow(Acc2);
+break;
+
+case 2:
+    setToShow(Acc3);
+break;
+
+
+
+
+}
+
+    
         
         
         }
 
-        slideShow();
+        //slideShow();
        
-        function slideShow(){
+       /* function slideShow(){
 
             let slide =[Acc1, Acc2, Acc3];
             let count=0;
@@ -64,11 +84,11 @@ const Carousel=()=>{
 
               
 
-            }
+            }*/
 
         
         
-            }    
+           // }    
     
 
 
@@ -80,9 +100,9 @@ return(
 <a href='#'>VOIR LA BOUTIQUE</a>
 
 <div>
- <a href='#' onClick={handleClick}>1</a>
- <a href='#'>2</a>
- <a href='#'>3</a>   
+ <a href='#' onClick={(e)=>handleClick(0,e)}>1</a>
+ <a href='#' onClick={(e)=>handleClick(1,e)}>2</a>
+ <a href='#' onClick={(e)=>handleClick(2,e)}>3</a>   
 </div>
 
 
