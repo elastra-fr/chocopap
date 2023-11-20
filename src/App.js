@@ -4,6 +4,8 @@ import cartIc from './images/cart.svg'
 import './components/Cart'
 import Cart from './components/Cart'
 import Carousel from './components/Carousel'
+import NewCarousel from './components/NewCarousel';
+import { carouselImg } from './components/Data';
 
 
 /*const Panier=()=>{
@@ -77,6 +79,7 @@ return(
 
 <div>
 <Carousel/>
+<NewCarousel images={carouselImg} />
 
 </div>
 
