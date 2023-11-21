@@ -1,12 +1,13 @@
 
 import './App.css';
-import cartIc from './images/cart.svg'
+//import cartIc from './images/cart.svg'
 import './components/Cart'
-import Cart from './components/Cart'
-import Carousel from './components/Carousel'
+//import Cart from './components/Cart'
+//import Carousel from './components/Carousel'
 import NewCarousel from './components/NewCarousel';
 import { carouselImg } from './components/Data';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 /*const Panier=()=>{
@@ -22,7 +23,7 @@ return(
 }*/
 
 
-const Header =()=>{
+/*const Header =()=>{
 
 return(
 <>
@@ -41,7 +42,7 @@ return(
 
 );
 
-};
+};*/
 
 /*const Footer2=()=>{
 
@@ -79,7 +80,7 @@ const MainContent=()=>{
 return(
 
 <div>
-<Carousel/>
+
 <NewCarousel images={carouselImg} />
 
 </div>

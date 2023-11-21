@@ -7,7 +7,8 @@
     --ChocoOrange:#FFD543;
        
     --ChocoTitres: 'Fjalla One', sans-serif;
-    --ChocoTextes: 'Noto Sans', sans-serif;    
+    --ChocoTextes: 'Noto Sans', sans-serif;
+    --ChocoMaxWidth:1440px;
 
 
 }
@@ -15,12 +16,20 @@
 
 body{
 font-family: var(--ChocoTextes);
+max-width: var(--ChocoMaxWidth);
+margin: 0 auto;
+min-height: 100vh;
+
 
 }
 
 
 /*Header*/
 
+h1, h2, h3, h4{
+font-family: var(--ChocoTitres);
+
+}
 
 
 .logo{width: 80px;
@@ -37,4 +46,79 @@ margin: 0 auto;
 
 
 /*Fin Header*/
+
+
+/**************Footer*********************************************/
+
+#mainFooter{
+display: flex;
+flex-direction: column;
+
+
+}
+
+#footText{
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#footContact{
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+
+}
+
+
+#socials{
+display: flex;
+flex-direction: row;
+margin: 10px;
+
+
+}
+
+
+#socials svg{
+height: 48px;
+width: 48px;
+
+}
+
+
+
+
+
+
+
+
+/**************************************Media Queries*******************************/
+
+
+@media screen and (min-width:768px){
+    
+#mainHeader{
+display: flex;
+
+
+}
+
+
+
+    #mainFooter{
+        
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+        
+        }
+
+#socials{align-self: center;}
+
+
+    
+}
 

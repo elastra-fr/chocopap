@@ -10,7 +10,7 @@ const [autoPlay, setAutoPlay]=useState(true);
 let timeOut=null;
 
 useEffect(()=>{
-timeOut = autoPlay && setTimeout(()=>{slideRight();}, 2500);
+timeOut = autoPlay && setTimeout(()=>{slideRight();}, 3000);
 
 });
 

@@ -2,9 +2,10 @@
 
 .carousel{
 display: flex;
-height: 400px;
+height: 60vh;
 width: 100%;
-max-width: 800px;
+max-width: var(--ChocoMaxWidth);
+margin: 0 auto;
 }
 .carouselWrapper{
     position: relative;
