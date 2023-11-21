@@ -1,5 +1,27 @@
+:root{
+    --ChocoBlanc:#FFFFFF;
+    --ChocoBleu:#55C0CF;
+    --ChocoGris:#2C1E1E;
+    --ChocoNoir:#1F1615;
+    --ChocoMarron:#B65F28;
+    --ChocoOrange:#FFD543;
+       
+    --ChocoTitres: 'Fjalla One', sans-serif;
+    --ChocoTextes: 'Noto Sans', sans-serif;    
+
+
+}
+
+
+body{
+font-family: var(--ChocoTextes);
+
+}
+
 
 /*Header*/
+
+
 
 .logo{width: 80px;
 

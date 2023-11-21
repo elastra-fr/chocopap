@@ -6,6 +6,7 @@ import Cart from './components/Cart'
 import Carousel from './components/Carousel'
 import NewCarousel from './components/NewCarousel';
 import { carouselImg } from './components/Data';
+import Footer from './components/Footer';
 
 
 /*const Panier=()=>{
@@ -42,7 +43,7 @@ return(
 
 };
 
-const Footer=()=>{
+/*const Footer2=()=>{
 
 return(
 <footer id='mainFooter'>
@@ -69,7 +70,7 @@ return(
 
 );
 
-}
+}*/
 
 
 
