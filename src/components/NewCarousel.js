@@ -3,6 +3,7 @@ import '../style/NewCarousel.css'
 import'../images/accueil1.jpg'
 import'../images/accueil2.jpg'
 
+
 function NewCarousel({images}) {
 
 const [current, setCurrent]=useState(0);
