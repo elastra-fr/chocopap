@@ -1,4 +1,4 @@
-.carouselWrapper{background-color: black;}
+.carouselWrapper{background-color: var(--ChocoNoir)}
 
 .carousel{
 display: flex;

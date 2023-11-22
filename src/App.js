@@ -8,6 +8,7 @@ import NewCarousel from './components/NewCarousel';
 import { carouselImg } from './components/Data';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import PageBoutique from './components/PageBoutique';
 
 
 /*const Panier=()=>{
