@@ -8,76 +8,22 @@ import NewCarousel from './components/NewCarousel';
 import { carouselImg } from './components/Data';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import PageBoutique from './components/PageBoutique';
-
-
-/*const Panier=()=>{
-return(
-<div>
-  <a><img className='icCart' src={cart} alt='Panier'/><span></span></a>
-  <span>2</span>
-</div>
-
-);
-
-
-}*/
-
-
-/*const Header =()=>{
-
-return(
-<>
-<header id='mainHeader'>
-<a><img className='logo' src={require("./images/logo.png")} alt='Logo Choco Pap'/></a>
-<ul>
-<li><a>Accueil</a></li> 
-<li><a>Boutique</a></li>
-</ul>
-<Cart src={cartIc}/>
-
-
-</header>
-
-</>
-
-);
-
-};*/
-
-/*const Footer2=()=>{
-
-return(
-<footer id='mainFooter'>
-<div>
-  <h3>Choco Pap</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin facilisis odio at tincidunt. In hac habitasse platea dictumst. Class.
-
-</p>
-
-</div>
-
-<div>
-<h3>Contact</h3>
-<span>Adresse : 51, Rue du chocolat</span>
-<span>Téléphone : 01 23 45 67 89</span>
-<span>Horaires : 9h00-17h00 du Lundi au Vendredi</span>
-</div>
-
-<div>
-  
-</div>
-
-</footer>
-
-);
-
-}*/
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './HomePage';
+import Boutique from './Boutique';
+import FicheProduit from './FicheProduit';
 
 
 
 
-const MainContent=()=>{
+
+
+
+
+
+
+
+/*const MainContent=()=>{
 return(
 
 <div>
@@ -92,20 +38,28 @@ return(
 );
 
 
-}
-
+}*/
 
 function App() {
   return (
-    <div className="App">
-      
-      <Header/>
+  <div>
+      <Routes>
+      <Route exact path='/' element={<HomePage/>} />    
+    <Route exact path='/Homepage' element={<HomePage/>} />
+    <Route path='/Boutique' element={<Boutique/>} />
+    <Route path='/FicheProduit' element={<FicheProduit/>} />
+    </Routes>
+  
+    
 
-<MainContent/>
-
-    <Footer/>
     </div>
+  
   );
+
+ 
+
+
 }
 
 export default App;
+
