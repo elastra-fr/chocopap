@@ -31,6 +31,11 @@ font-family: var(--ChocoTitres);
 
 }
 
+header{
+position: relative;
+    z-index: 10;
+}
+
 
 .logo{width: 80px;
 
@@ -39,16 +44,56 @@ font-family: var(--ChocoTitres);
 .icCart{width: 50px;}
 
 .imgAcc{
-width: 90vw;
+left: 90vw;
 margin: 0 auto;
 
 }
+
+#mainNav{
+position: relative;
+z-index: 5;
+transition: left 1s;
+
+
+}
+
+.showNav{
+    left: 0;
+    height: auto;
+
+}
+
+.hideNav{
+
+   
+top: -100vh;
+height: 0;
+}
+
+#mainNav ul{
+display: flex;
+flex-direction: column;
+list-style: none;
+
+}
+
+.burgerMenu{
+    display: block;
+position: absolute;
+top: 10px;
+right: 10px;
+
+}
+
+
 
 
 /*Fin Header*/
 
 
 /**************Footer*********************************************/
+
+
 
 #mainFooter{
 display: flex;
@@ -89,6 +134,7 @@ width: 48px;
 
 }
 
+main{min-height: 80vh;}
 
 
 
@@ -100,12 +146,41 @@ width: 48px;
 
 
 @media screen and (min-width:768px){
+
+    .burgerMenu{
+        display: none;
+    }
     
 #mainHeader{
 display: flex;
-
+justify-content: space-between;
 
 }
+
+#mainNav{
+
+  
+
+    width: 30%;
+   top: unset;
+    position: static;
+    align-self: center;
+    height: auto;
+
+}
+
+ 
+
+
+#mainNav ul{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    }
 
 
 

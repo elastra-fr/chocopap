@@ -3,8 +3,8 @@
 const Cart=(props)=>{
     return(
     <div>
-      <a href="#"><img className='icCart' src={props.src} alt='Panier'/><span></span></a>
-      <span>2</span>
+      <a href="#"><span>2</span><img className='icCart' src={props.src} alt='Panier'/><span></span></a>
+      
     </div>
     
     );
