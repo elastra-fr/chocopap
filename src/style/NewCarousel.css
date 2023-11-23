@@ -43,19 +43,11 @@ pointer-events: visible;
 
 .leftArrow, .rightArrow{
 position: absolute;
-font-size: 40px;
 top:50%;
-transform: translate(0, 50%);
-background-color: gainsboro;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 30px;
-height: 30px;
 cursor: pointer;
-border-radius: 50%;
-padding-bottom: 7px;
-
 
 }
 
@@ -69,4 +61,11 @@ left: 15px;
 
     right: 15px;
     
+    }
+
+    .leftArrow svg, .rightArrow svg{
+height: 48px;
+width: 48px;
+fill: white;
+
     }
