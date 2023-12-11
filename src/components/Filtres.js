@@ -1,13 +1,33 @@
 import React from 'react'
 import '../style/Filtres.css'
+import CheckBoxWithLabel from './CheckBoxWithLabel'
 
 function Filtres() {
+
+const categories=[{titre : "Tous", value:"all"}, {titre : "Chocolat Blanc", value:"whiteChoc"}, {titre : "Chocolat au lait", value:"milkChoc"},{titre : "Chocolat noir", value:"blackChoc"},{titre : "Noix/Noisette", value:"nutChoc"},{titre : "Fruit", value:"fruit"},{titre : "Caramel", value:"caramel"},{titre : "Liqueur", value: "liqueur"},];
+
+
+
   return (
     <>
 <div id="filters">
 <h3>FILTRES</h3>
 
-<div id='filtreCategories'>
+<div id='filtreCategories' className='filtreCont'>
+  <h4>Catégories</h4>
+
+  {categories.map((item, index)=>{
+
+return(
+  <div key={index}>
+<CheckBoxWithLabel title={item.titre} value={item.value}/>
+</div>
+)
+
+
+  })}
+
+ 
 <p>
 
 </p>
@@ -15,47 +35,23 @@ function Filtres() {
 
 </div>
 
-<div id='filtrePrix'> 
-<ul>
-<li>
-  <input type="checkbox" id="all" name="all" value="all" />
-  <label for="all">Tous</label>
-  </li>
-  <li>
-  <input type="checkbox" id="whiteChoco" name="whiteChoco" value="whiteChoco" />
-  <label for="whiteChoco">Développement</label>
-  </li>
-  <li>
-  <input type="checkbox" id="milkChoco" name="milkChoco" value="milkChoco" />
-  <label for="milkChoco">Développement</label>
-  </li>
-  <li>
-  <input type="checkbox" id="coding" name="interest" value="coding" />
-  <label for="coding">Développement</label>
-  </li>
-  <li>
-  <input type="checkbox" id="coding" name="interest" value="coding" />
-  <label for="coding">Développement</label>
-  </li>
-  <li>
-  <input type="checkbox" id="coding" name="interest" value="coding" />
-  <label for="coding">Développement</label>
-  </li>
-  <li>
-  <input type="checkbox" id="coding" name="interest" value="coding" />
-  <label for="coding">Développement</label>
-  </li>
-  <li>
-  <input type="checkbox" id="coding" name="interest" value="coding" />
-  <label for="coding">Développement</label>
-  </li>
+<div id='filtrePrix' className='filtreCont'> 
+<h4>Prix</h4>
 
-</ul>
+
 
 
 
 
 </div>
+
+<div className='filtreCont'>
+<h4>Notes</h4>
+
+
+</div>
+
+
 
 </div>
 

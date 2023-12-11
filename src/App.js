@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 import Boutique from './Boutique';
 import FicheProduit from './FicheProduit';
+import {useState, useEffect} from 'react';
+
 
 
 
@@ -41,13 +43,17 @@ return(
 }*/
 
 function App() {
+
+
+
+
   return (
   <div>
       <Routes>
       <Route exact path='/' element={<HomePage/>} />    
     <Route exact path='/Homepage' element={<HomePage/>} />
     <Route path='/Boutique' element={<Boutique/>} />
-    <Route path='/FicheProduit' element={<FicheProduit/>} />
+    <Route path='/FicheProduit/:id' element={<FicheProduit/>} />
     </Routes>
   
     

@@ -4,7 +4,7 @@ import cartIc from '../images/cart.svg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-function Header() {
+function Header({close}) {
 
 const [showNav, setShowNav]= useState(false);
 
@@ -15,7 +15,7 @@ setShowNav(!showNav);
 
 };
 
-console.log(showNav);
+
 
 
 
@@ -28,7 +28,7 @@ console.log(showNav);
 <ul>
 <li><Link to='/Homepage'>Accueil</Link></li> 
 <li><Link to='/Boutique'>Boutique</Link></li>
-<Cart src={cartIc}/><li></li>
+<li onClick={()=>close()}><Cart src={cartIc}/></li>
 
 </ul>
 

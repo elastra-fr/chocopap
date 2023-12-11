@@ -1,0 +1,64 @@
+.cardWrapper{
+width: 100%;
+max-width: 350px;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 4fr 1fr 1fr 1fr 1.5fr ;
+border:1px solid black;
+margin: 15px auto;
+background-color: var(--ChocoBlanc);
+color: var(--ChocoNoir);
+transition: transform .25s;
+
+
+}
+
+.cardWrapper:hover, .cardWrapper button:hover{
+cursor: pointer;
+
+
+}
+
+.cardWrapper:hover{
+    transform: scale(1.075);
+
+}
+
+
+
+.cardWrapper img{
+width: 100%;
+object-fit: cover;
+height: 200px;
+background-origin: padding-box;
+
+
+
+}
+
+.cardWrapper p{
+justify-self: center;
+
+}
+
+.cardWrapper button{
+    padding: 15px;
+    margin: 20px;
+    font-weight: bolder;
+    font-size: 1.1em;
+    color: var(--ChocoBleu);
+    background-color: unset;
+
+
+
+}
+
+@media screen and (min-width:768px){
+    
+    .cardWrapper{
+    width: 350px;
+    height: 450px;
+    }
+
+
+}
