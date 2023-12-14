@@ -20,3 +20,50 @@ margin: 15px;
 
 }
 
+.showCat div{
+    display:block;
+}
+
+.hideCat div{
+    display: none;
+}
+
+.showPrice div{
+    display:block;
+}
+
+.hidePrice div{
+    display: none;
+}
+
+.showNotes div{
+    display:block;
+}
+
+.hideNotes div{
+    display: none;
+}
+
+@media screen and (min-width:768px){
+
+        #catPlus, #prixPlus, #notesPlus{
+            display: none;
+        }
+   
+        
+        .hideCat div{
+            display: block;
+        }
+
+        .hidePrice div{
+            display: block;
+        }
+
+        .hideNotes div{
+            display: block;
+        }
+
+
+
+
+}
