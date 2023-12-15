@@ -9,14 +9,26 @@ const {id}=useParams();
 //console.log({id});
 const produit=Data.find((produit)=>produit.id===id);
 console.log(produit);
-const {title}=produit;
+const {title, price, image, description, ingredients}=produit;
 
 
   return (
     <>
     <Header/>
-<h5>{title}</h5>
-
+<div id='singleProductInfos'>
+<p>{title}</p>
+<p>{price}</p>
+<p>{description}</p>
+<input type='number'></input>
+<input type='button'>Ajouter au panier</input>
+</div>
+<div id='singleProductImg'>
+  <img src={image} alt={'Illustration du produit '+title}></img>
+</div>
+<div id='singleProductIngredients'>
+  <p>Ingrédients</p>
+  <p>{ingredients}</p>
+</div>
     
     <Footer/>
     </>
