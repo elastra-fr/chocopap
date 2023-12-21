@@ -3,15 +3,21 @@ import '../style/CardProducts.css'
 import { Link } from 'react-router-dom'
 
 function CardProduct({key, id, urlImage, name, price, note}) {
+console.log(id);
+
   return (
     <div key={key} className='cardWrapper'>
+      <div id='cardBody'>
       <Link to={`/FicheProduit/${id}`}>
         <img src={urlImage} alt='Produit'/>
         </Link>
+          </div>
+        <div id='cardFooter'>
         <p>{name}</p>
         <p>{price + " €"}</p>
         <p>{note}</p>
         <button>Ajouter au panier</button>
+        </div>
     </div>
   )
 }
