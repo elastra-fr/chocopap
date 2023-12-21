@@ -4,15 +4,15 @@ import './App.css';
 import './components/Cart'
 //import Cart from './components/Cart'
 //import Carousel from './components/Carousel'
-import NewCarousel from './components/NewCarousel';
-import { carouselImg } from './components/Data';
-import Footer from './components/Footer';
-import Header from './components/Header';
+//import NewCarousel from './components/NewCarousel';
+//import { carouselImg } from './components/Data';
+//import Footer from './components/Footer';
+//import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 import Boutique from './Boutique';
 import FicheProduit from './FicheProduit';
-import {useState, useEffect} from 'react';
+//import {useState, useEffect} from 'react';
 
 
 

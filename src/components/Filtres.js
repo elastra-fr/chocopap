@@ -56,7 +56,7 @@ default:
   {categories.map((item, index)=>{
 
 return(
-  <div key={index}>
+  <div key={"check"+index}>
 <CheckBoxWithLabel title={item.titre} value={item.value}/>
 </div>
 )
@@ -76,7 +76,7 @@ return(
 <h4>Prix <span id="prixPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
 <div>
-<label for="prixMin">Prix min:</label>
+<label htmlFor="prixMin">Prix min:</label>
 <select name="min" id="prixMin">
   <option value="1">1 €</option>
   <option value="5">5 €</option>
@@ -89,15 +89,15 @@ return(
  </div>
 
 <div>
-<label for="prixMax">Prix max:</label>
-<select name="max" id="prixMax">
+<label htmlFor="prixMax">Prix max:</label>
+<select name="max" id="prixMax" defaultValue={"100"}>
 <option value="5">5 €</option>
   <option value="10">10 €</option>
   <option value="15">15 €</option>
   <option value="30">30 €</option>
   <option value="50">50 €</option>
   <option value="75">75 €</option>
-  <option value="100" selected>100 €</option>
+  <option value="100">100 €</option>
 </select>
 </div>
 
@@ -111,28 +111,24 @@ return(
 <h4>Notes <span id="notesPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
 <div>
-<label for="noteMin">Note min:</label>
+<label htmlFor="noteMin">Note min:</label>
 <select name="min" id="NoteMin">
-  <option value="1">1 €</option>
-  <option value="5">5 €</option>
-  <option value="10">10 €</option>
-  <option value="15">15 €</option>
-  <option value="30">30 €</option>
-  <option value="50">50 €</option>
-  <option value="75">75 €</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
  </select>
  </div>
 
 <div>
-<label for="prixMax">Prix max:</label>
-<select name="max" id="prixMax">
-<option value="5">5 €</option>
-  <option value="10">10 €</option>
-  <option value="15">15 €</option>
-  <option value="30">30 €</option>
-  <option value="50">50 €</option>
-  <option value="75">75 €</option>
-  <option value="100" selected>100 €</option>
+<label htmlFor="noteMax">Note max:</label>
+<select name="max" id="prixMax" defaultValue={"5"}>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
 </select>
 </div>
 

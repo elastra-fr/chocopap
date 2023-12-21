@@ -29,7 +29,7 @@ export default function BoutiquePage() {
 
 
     const fetchProducts=async()=>{
-        console.log("Ok");
+        //console.log("Ok");
 
         const query = new Parse.Query("products");
         
@@ -40,7 +40,7 @@ export default function BoutiquePage() {
             const allProducts=await query.find();
             
             setProducts(allProducts);
-            console.log(allProducts);
+            //console.log(allProducts);
             return true;
         
         }
@@ -132,7 +132,7 @@ return(
 
 {products !== undefined &&
               products.map((item, index) => (
-                <CardProduct key={`${index}`} id={/*`${item.get("id")}`*/item.id} urlImage={`${item.get("image")}`} name={`${item.get("title")}` } price={`${item.get("price")}`} note={`${item.get("note")}`}/>
+                <CardProduct key={index} id={/*`${item.get("id")}`*/item.id} urlImage={`${item.get("image")}`} name={`${item.get("title")}` } price={`${item.get("price")}`} note={`${item.get("note")}`}/>
                 
               
               ))}

@@ -2,11 +2,11 @@ import React from 'react'
 import '../style/CardProducts.css'
 import { Link } from 'react-router-dom'
 
-function CardProduct({key, id, urlImage, name, price, note}) {
-console.log(id);
+function CardProduct({id, urlImage, name, price, note}) {
+//console.log(id);
 
   return (
-    <div key={key} className='cardWrapper'>
+    <div key={"produit"+id} className='cardWrapper'>
       <div id='cardBody'>
       <Link to={`/FicheProduit/${id}`}>
         <img src={urlImage} alt='Produit'/>

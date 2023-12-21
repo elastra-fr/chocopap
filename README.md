@@ -1,3 +1,14 @@
+
+#Projet CHOCOPAP 
+
+Projet réalisé dans le cadre du module 3 de la formation DWWM Epsi.
+
+Frontend d'une boutique en ligne de chocolats.
+
+Utilisation du framework React
+Back-end utilisé pour la liste des produits : back4app.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,7 +2,7 @@ import React from 'react'
 
 function CheckBoxWithLabel({title, value, isChecked}) {
   return (
-    <div className='checkWithLabel'>
+    <div className='checkWithLabel' key={title}>
         <input type="checkbox" id={title} name={title} value={value}/>
   <label htmlFor={title}>{title}</label>
     </div>
