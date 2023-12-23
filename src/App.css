@@ -324,8 +324,8 @@ justify-content: space-between;
 
         #singleProductMain{
             display: grid;
-            grid-template-columns: 1;
-            grid-template-rows: 2;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
 
             
             
@@ -333,23 +333,31 @@ justify-content: space-between;
 
     #infosWrapper{
 
-        display: flex;
-        flex-direction: row-reverse;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "img infos";
+        max-height: 60%;
+        gap: 25px;
+        align-items: center;
+        
     }
 
     #singleProductInfos{
 width: 45%;
+grid-area: infos;
+display: flex;
+flex-direction: column;
+align-items: center;
 
     }
 
-    
-    #singleProductImg{
-width: 45%;
 
-    }
 
     #singleProductImg img{
+        display: flex;
         width: 100%;
+        grid-area: img;
         
             }
 

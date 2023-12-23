@@ -23,8 +23,23 @@ Parse.serverURL=host_url;
 
 export default function BoutiquePage() {
 
-    
+    //Filtres
+    const [priceRange, setPriceRange] = useState({ min: 0, max: 100});
+    const [noteRange, setNoteRange] = useState({ min:0, max: 5});
+    const [blanc, setBlanc]=useState(false);
+    const [lait, setLait]=useState(true);
+    const [noir, setNoir]=useState(false);
+    const [caramel, setCaramel]=useState(false);
+    const [noix, setNoix]=useState(false);
+    const [fruit, setFruit]=useState(true);
+    const [liqueur, setLiqueur]=useState(false);
+
+    //console.log(priceRange);
+    //Fin filtres
+
+  
     const [products, setProducts] = useState(); 
+
 
 
 
@@ -32,15 +47,27 @@ export default function BoutiquePage() {
         //console.log("Ok");
 
         const query = new Parse.Query("products");
-        
-        
-        
+        query.greaterThanOrEqualTo('price', priceRange.min);
+        query.lessThanOrEqualTo('price', priceRange.max);
+        query.greaterThanOrEqualTo('note', noteRange.min);
+        query.lessThanOrEqualTo('note', noteRange.max);
+
+        if (blanc===true) { query.equalTo("category.blanc", true)}; 
+        if (lait===true)query.equalTo("category.lait", true);
+        if (noir===true) {query.equalTo("category.noir", true)};
+        if (caramel===true) {query.equalTo("category.caramel", true)};
+        if (noix===true) {query.equalTo("category.noix", true)};
+        if (fruit===true) {query.equalTo("category.fruit", true)};
+        if (liqueur===true) {query.equalTo("category.liqueur", true)};
+
         
         try{
             const allProducts=await query.find();
+
             
             setProducts(allProducts);
-            //console.log(allProducts);
+            console.log(allProducts[0].attributes.category.blanc);
+            
             return true;
         
         }
