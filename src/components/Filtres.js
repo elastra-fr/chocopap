@@ -3,7 +3,7 @@ import '../style/Filtres.css'
 import CheckBoxWithLabel from './CheckBoxWithLabel'
 import { useState } from 'react'
 
-function Filtres() {
+function Filtres({change}) {
 
 const categories=[{titre : "Tous", value:"all"}, {titre : "Chocolat Blanc", value:"whiteChoc"}, {titre : "Chocolat au lait", value:"milkChoc"},{titre : "Chocolat noir", value:"blackChoc"},{titre : "Noix/Noisette", value:"nutChoc"},{titre : "Fruit", value:"fruit"},{titre : "Caramel", value:"caramel"},{titre : "Liqueur", value: "liqueur"},];
 const [showCat, setShowCat]= useState(false);
@@ -13,7 +13,7 @@ const [showNotes, setShowNotes]= useState(false);
 
 const handleFilters=event=>{
 
-  console.log(event.currentTarget.id);
+  //console.log(event.currentTarget.id);
 
 switch(event.currentTarget.id)
 {
@@ -48,7 +48,7 @@ default:
 
 return(
   <div key={"check"+index}>
-<CheckBoxWithLabel title={item.titre} value={item.value}/>
+<CheckBoxWithLabel title={item.titre} value={item.value} />
 </div>
 )
 
@@ -68,7 +68,7 @@ return(
 
 <div>
 <label htmlFor="prixMin">Prix min:</label>
-<select name="min" id="prixMin">
+<select name="min" id="prixMin" onChange={(e)=>change(e.target.value)} defaultValue={"1"}>
   <option value="1">1 €</option>
   <option value="5">5 €</option>
   <option value="10">10 €</option>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function CheckBoxWithLabel({title, value, isChecked}) {
+function CheckBoxWithLabel({title, value, isChecked, change}) {
   return (
     <div className='checkWithLabel' key={title}>
-        <input type="checkbox" id={title} name={title} value={value}/>
+        <input type="checkbox" id={value} name={title} value={value} onChange={change}/>
   <label htmlFor={title}>{title}</label>
     </div>
   )
