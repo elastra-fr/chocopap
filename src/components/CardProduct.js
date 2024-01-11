@@ -12,10 +12,10 @@ function CardProduct({id, urlImage, name, price, note}) {
         <img src={urlImage} alt='Produit'/>
         </Link>
           </div>
-        <div id='cardFooter'>
-        <p>{name}</p>
+        <div className='cardFooter'>
+        <p className='productName'>{name}</p>
         <p>{price + " €"}</p>
-        <p>{note}</p>
+        <p>{"Note : " + note}</p>
         <button>Ajouter au panier</button>
         </div>
     </div>

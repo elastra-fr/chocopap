@@ -116,6 +116,9 @@ right: 10px;
 
 }
 
+.burgerMenu:hover{
+    cursor: pointer;
+}
 
 
 
@@ -218,13 +221,24 @@ position: relative;
 
 }
 
+
+
 #boutiqueTitle{
 text-align: center;
-margin: 25px;
 font-size: x-large;
-font-weight: bolder;
+font-weight: bold;
+color: var(--ChocoOrange);
+margin-top: 10px;
 
 }
+
+#boutiqueTitle::first-letter{
+color: var(--ChocoMarron); 
+font-weight: bolder;
+
+ }
+
+
 
 #boutiqueWrapper{
 display: flex;

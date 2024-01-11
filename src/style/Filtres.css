@@ -11,17 +11,51 @@ a{text-decoration: none;}
 
 #filters{
     min-width: 20%;
-
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
+#filters h3{
+    color: var(--ChocoOrange);
+    margin: 5px;
+    font-size:x-large;
+}
+
+#filters h3::first-letter{
+    color: var(--ChocoMarron);
+}
+
 
 .filtreCont{
 margin: 15px;
 
+}
 
+.filtreCont h4{
+    color: var(--ChocoMarron);
+    font-size: larger;
+}
+
+.filtreCont h4::first-letter{
+    color: var(--ChocoOrange);
+}
+
+.filtreContTitle{
+    color: var(--ChocoMarron);
+}
+
+.checkWithLabel{
+    padding: 5px;
+    font-size: larger;
+}
+
+.selectCont{
+    display: flex;
+    justify-content: space-between;
 }
 
 .showCat div{
-    display:block;
+    display:flex;
 }
 
 .hideCat div{
@@ -29,7 +63,7 @@ margin: 15px;
 }
 
 .showPrice div{
-    display:block;
+    display:flex;
 }
 
 .hidePrice div{
@@ -37,7 +71,7 @@ margin: 15px;
 }
 
 .showNotes div{
-    display:block;
+    display:flex;
 }
 
 .hideNotes div{
@@ -52,15 +86,24 @@ margin: 15px;
    
         
         .hideCat div{
-            display: block;
+            display: flex;
+            
         }
 
         .hidePrice div{
-            display: block;
+            display: flex;
+            padding: 5px;
+            font-size: larger;
         }
 
         .hideNotes div{
-            display: block;
+            display: flex;
+            padding: 5px;
+            font-size: larger;
+        }
+
+        .hideCat div select, .hidePrice div select, .hideNotes div select {
+            width: 25%;
         }
 
 

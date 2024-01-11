@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CardProduct from './components/CardProduct';
-import Filtres from './components/Filtres';
+import './style/Filtres.css'
+//import Filtres from './components/Filtres';
 import {useState, useEffect} from 'react';
 import Panier from './components/Panier';
 import Parse from 'parse/dist/parse.min.js';
@@ -110,7 +111,7 @@ default:
     useEffect(() => {
 
             fetchProducts();
-        //Runs only on the first render
+        
       }, []);
 
 
@@ -238,7 +239,7 @@ return (
 <main className='mainBoutique'>
 
 
-<div id="boutiqueTitle"><p>BOUTIQUE</p></div>
+<div id="boutiqueTitle"><h1>BOUTIQUE</h1></div>
 
 
 <div id="boutiqueWrapper">
@@ -251,7 +252,7 @@ return (
 <div id="filters">
 <h3>FILTRES</h3>
 
-<div id='filtreCategories' className={`filtreCont, ${showCat? "showCat" : "hideCat"}`}>
+<div id='filtreCategories' className={`filtreCont ${showCat? "showCat" : "hideCat"}`}>
   <h4>Catégories <span id="catPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
   {categories.map((item, index)=>{
@@ -273,10 +274,10 @@ return(
 
 </div>
 
-<div id='filtrePrix' className={`filtreCont, ${showPrice? "showPrice" : "hidePrice"}`}> 
+<div id='filtrePrix' className={`filtreCont ${showPrice? "showPrice" : "hidePrice"}`}> 
 <h4>Prix <span id="prixPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
-<div>
+<div className='selectCont'>
 <label htmlFor="prixMin">Prix min:</label>
 <select name="min" id="prixMin" onChange={handleChange} defaultValue={"1"}>
   <option value="0">1 €</option>
@@ -289,7 +290,7 @@ return(
  </select>
  </div>
 
-<div>
+<div className='selectCont'>
 <label htmlFor="prixMax">Prix max:</label>
 <select name="max" id="prixMax" onChange={handleChange} defaultValue={"100"}>
 <option value="5">5 €</option>
@@ -308,10 +309,10 @@ return(
 
 </div>
 
-<div className={`filtreCont, ${showNotes? "showNotes" : "hideNotes"}`}>
+<div className={`filtreCont ${showNotes? "showNotes" : "hideNotes"}`}>
 <h4>Notes <span id="notesPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
-<div>
+<div className='selectCont'>
 <label htmlFor="noteMin">Note min:</label>
 <select name="min" id="noteMin" defaultValue={"1"} onChange={handleChange}>
   <option value="1">1</option>
@@ -322,7 +323,7 @@ return(
  </select>
  </div>
 
-<div>
+<div className='selectCont'>
 <label htmlFor="noteMax">Note max:</label>
 <select name="max" id="prixMax" defaultValue={"5"} onChange={handleChange}>
   <option value="1">1</option>
