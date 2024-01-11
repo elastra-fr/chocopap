@@ -15,6 +15,8 @@ a{text-decoration: none;}
     margin-right: 20px;
 }
 
+
+
 #filters h3{
     color: var(--ChocoOrange);
     margin: 5px;
@@ -52,6 +54,7 @@ margin: 15px;
 .selectCont{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .showCat div{
@@ -78,6 +81,22 @@ margin: 15px;
     display: none;
 }
 
+#filters div select{
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+input[type=checkbox]{
+accent-color: var(--ChocoMarron);
+width: 15px;
+
+}
+
+
+
 @media screen and (min-width:768px){
 
         #catPlus, #prixPlus, #notesPlus{
@@ -94,6 +113,7 @@ margin: 15px;
             display: flex;
             padding: 5px;
             font-size: larger;
+
         }
 
         .hideNotes div{
@@ -103,7 +123,7 @@ margin: 15px;
         }
 
         .hideCat div select, .hidePrice div select, .hideNotes div select {
-            width: 25%;
+            width: 50%;
         }
 
 

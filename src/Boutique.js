@@ -94,14 +94,14 @@ default:
 
             
             setProducts(allProducts);
-            console.log(allProducts[0].attributes.category.blanc);
+            //console.log(allProducts[0].attributes.category.blanc);
             
             return true;
         
         }
         
         catch (error){
-        console.log(`Erreur : ${error.message}`);
+        //console.log(`Erreur : ${error.message}`);
         return false;
         
         }
