@@ -1,6 +1,7 @@
 import React from 'react'
 import '../style/CardProducts.css'
 import { Link } from 'react-router-dom'
+import {gestionCart,insertItemCart, removeItemCart, updateItemCart} from './utils.js'
 
 function CardProduct({id, urlImage, name, price, note}) {
 //console.log(id);
@@ -16,7 +17,7 @@ function CardProduct({id, urlImage, name, price, note}) {
         <p className='productName'>{name}</p>
         <p>{price + " €"}</p>
         <p>{"Note : " + note}</p>
-        <button>Ajouter au panier</button>
+        <button onClick={()=>{gestionCart(id, urlImage, name, price, 1)}}>Ajouter au panier</button>
         </div>
     </div>
   )

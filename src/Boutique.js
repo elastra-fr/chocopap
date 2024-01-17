@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CardProduct from './components/CardProduct';
 import './style/Filtres.css'
-//import Filtres from './components/Filtres';
 import {useState, useEffect} from 'react';
 import Panier from './components/Panier';
 import Parse from 'parse/dist/parse.min.js';
@@ -61,8 +60,6 @@ default:
 }
 
 
- 
-    //console.log(priceRange);
     //Fin filtres
 
   

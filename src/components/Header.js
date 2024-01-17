@@ -2,11 +2,54 @@ import React from 'react'
 import Cart from './Cart'
 import cartIc from '../images/cart.svg'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Header({close}) {
 
 const [showNav, setShowNav]= useState(false);
+const [cartCount, setcartCount]= useState(0);
+
+function checkDataStorage(){
+//let myCart= [{id:"3", qte:"4"}, {id:"2", qte:"5"}, {id:"2", qte:"4"} ];
+//myCart.push({id:"12", qte:"3"});
+
+//localStorage.setItem("myCart", JSON.stringify(myCart));
+//localStorage.removeItem("myCart");
+
+if(localStorage.getItem("myCart"))
+{
+  let cart = JSON.parse(localStorage.getItem("myCart"));
+  //console.log(Object.values(cart).length);
+  let newCount=Object.values(cart).length;  
+  setcartCount(newCount);
+
+
+}
+
+else
+
+{
+
+console.log("Mon panier est vide");
+setcartCount(0);
+}
+}
+
+
+useEffect(() => {
+
+checkDataStorage();  
+
+}, []);
+
+
+
+
+
+
+
+
+
 
 const handleShowNav= ()=>{
 
@@ -28,7 +71,7 @@ setShowNav(!showNav);
 <ul>
 <li><Link to='/Homepage'>Accueil</Link></li> 
 <li><Link to='/Boutique'>Boutique</Link></li>
-<li onClick={()=>close()}><Cart src={cartIc}/></li>
+<li onClick={()=>close()}><Cart src={cartIc} count={cartCount}/></li>
 
 </ul>
 
