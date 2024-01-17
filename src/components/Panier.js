@@ -1,7 +1,21 @@
 import React from 'react'
 import {emptyItemsCart} from './utils'
+//import CartItem from './CartItem'
+import {useState, useEffect} from 'react'
+import CartItem from './CartItem';
+//import CartItem from './CartItem';
 
-function Panier({close, showPanier}) {
+
+
+
+
+function Panier({close, showPanier, emptyCart, cartItems}) {
+
+  console.log(cartItems);
+  if(cartItems){
+console.log(cartItems);
+//console.log(Array.isArray(JSON.parse(cartItems)));
+  }
   return (
     <div id='panier' className={`${showPanier? "showPanier" : "hidePanier"}`}>
      <div id="headerPanier">
@@ -9,18 +23,22 @@ function Panier({close, showPanier}) {
      
      <p>Panier</p>
 
-    
 
 
 
+     <div>
 
-<button onClick={()=>{emptyItemsCart()}}>Vider panier</button>
+  {cartItems !== "" && cartItems.map(item => <CartItem/>)}
 
+
+       
+
+     </div>
 
     </div>
     
     <div id='footerPanier'>
-
+    <button onClick={()=>{emptyCart()}}>REINITIALISER LE PANIER</button>
 
       
     </div>

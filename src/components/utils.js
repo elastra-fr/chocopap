@@ -1,3 +1,5 @@
+
+
 //const someCommonValues = ['common', 'values'];
     
 /*export const doSomethingWithInput = (theInput) => {
@@ -77,7 +79,7 @@ localStorage.setItem("myCart", JSON.stringify(newCart));
 
 
     
-console.log(JSON.parse(localStorage.getItem("myCart")));
+//console.log(JSON.parse(localStorage.getItem("myCart")));
     
     };
 
@@ -106,3 +108,4 @@ console.clear();
 console.log("Panier vidé");
 
 };
+

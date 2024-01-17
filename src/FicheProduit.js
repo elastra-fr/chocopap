@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 //import Data from './data/products.json'
 import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
+import Panier from './components/Panier';
 
 const app_id=process.env.REACT_APP_ID;
 const host_url=process.env.REACT_APP_HOST_URL;
@@ -17,8 +18,30 @@ Parse.serverURL=host_url;
 
 
 
-function FicheProduit() {
-const {id}=useParams();
+function FicheProduit(props) {
+
+  const [showPanier, setShowPanier]= useState(false);
+
+  const handleShowPanier= ()=>{
+  
+  setShowPanier(!showPanier);
+  console.log(showPanier);
+  
+  
+  };
+
+
+
+
+
+
+
+  const {id}=useParams();
+
+
+
+
+
 
 const [product, setProduct] = useState(); 
 
@@ -59,9 +82,11 @@ useEffect(() => {
 
 
 
+
+
   return (
     <>
-    <Header/>
+<Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
 
 
 {product !==undefined && <main id='singleProductMain'>    
@@ -82,9 +107,10 @@ useEffect(() => {
   <h4>Ingrédients</h4>
   <p id='ingList'>{product[0].attributes.ingredients}</p>
 </div>
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems}/>
 </main>}
     <Footer/>
-
+  
 
     </>
   )

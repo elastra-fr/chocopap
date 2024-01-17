@@ -17,7 +17,7 @@ Parse.initialize(app_id, javascript_key);
 Parse.serverURL=host_url;
 
 
-export default function BoutiquePage() {
+export default function BoutiquePage(props) {
 
 
     //Filtres
@@ -229,7 +229,7 @@ return (
 
 
 <>
-<Header close={handleShowPanier} showPanier={showPanier}/>
+<Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
 
 
 
@@ -359,7 +359,7 @@ return(
 
 {products !== undefined &&
               products.map((item, index) => (
-                <CardProduct key={index} id={/*`${item.get("id")}`*/item.id} urlImage={`${item.get("image")}`} name={`${item.get("title")}` } price={`${item.get("price")}`} note={`${item.get("note")}`}/>
+                <CardProduct close={handleShowPanier} showPanier={showPanier} gestionCart={props.gestionCart} key={index} id={/*`${item.get("id")}`*/item.id} urlImage={`${item.get("image")}`} name={`${item.get("title")}` } price={`${item.get("price")}`} note={`${item.get("note")}`}/>
                 
               
               ))}
@@ -378,7 +378,7 @@ return(
 </div>
 
 
-<Panier close={handleShowPanier} showPanier={showPanier}/>
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems}/>
 
 </main>
 

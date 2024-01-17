@@ -9,7 +9,7 @@ import {useState, useEffect} from 'react';
 
 
 
-export default function HomePage() {
+export default function HomePage(props) {
 
   document.title="Accueil - CHOCO PAP";
   
@@ -18,7 +18,7 @@ export default function HomePage() {
   const handleShowPanier= ()=>{
   
   setShowPanier(!showPanier);
-  console.log(showPanier);
+  //console.log(showPanier);
   
   
   };
@@ -26,12 +26,13 @@ export default function HomePage() {
 
   return (
     <div className='container'>
-<Header close={handleShowPanier} showPanier={showPanier}/>
+<Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
 <main>
 <NewCarousel images={carouselImg} />
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems}/>
 </main>
 <Footer/>
-<Panier close={handleShowPanier} showPanier={showPanier}/>
+
   </div>
 );
 

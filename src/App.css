@@ -120,6 +120,23 @@ right: 10px;
     cursor: pointer;
 }
 
+#cartCount{
+height: 25px;
+width: 25px;
+font-size: 0.9rem;
+color: var(--ChocoNoir);
+font-weight: bolder;
+background-color: var(--ChocoOrange);
+border: 2px solid var(--ChocoMarron);
+border-radius: 15%;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+
+}
 
 
 /*Fin Header*/

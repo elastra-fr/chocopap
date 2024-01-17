@@ -4,17 +4,17 @@ import cartIc from '../images/cart.svg'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-function Header({close}) {
+function Header({close, cartCount}) {
 
 const [showNav, setShowNav]= useState(false);
-const [cartCount, setcartCount]= useState(0);
-
+//const [cartCount, setcartCount]= useState(0);
+/*
 function checkDataStorage(){
 //let myCart= [{id:"3", qte:"4"}, {id:"2", qte:"5"}, {id:"2", qte:"4"} ];
 //myCart.push({id:"12", qte:"3"});
 
 //localStorage.setItem("myCart", JSON.stringify(myCart));
-//localStorage.removeItem("myCart");
+
 
 if(localStorage.getItem("myCart"))
 {
@@ -42,7 +42,7 @@ checkDataStorage();
 
 }, []);
 
-
+*/
 
 
 
