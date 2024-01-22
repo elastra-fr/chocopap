@@ -16,7 +16,7 @@ function CardProduct({close, showPanier, gestionCart, id, urlImage, name, price,
         <div className='cardFooter'>
         <p className='productName'>{name}</p>
         <p>{price + " €"}</p>
-        <p>{"Note : " + note}</p>
+        <p className='noteTag'>{"Note : " + note}</p>
         <button onClick={()=>{gestionCart(id, urlImage, name, price, 1)} /*()=>{emptyCart()}*/}>Ajouter au panier</button>
         </div>
     </div>

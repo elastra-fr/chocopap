@@ -197,12 +197,44 @@ top:0;
 
 width: 100%;
 height: 100%;
-background-color: var(--ChocoBleu);
+background-color: var(--ChocoGris);
 transition: right 0.5s linear, display 0s linear 600ms;
+display: flex;
+flex-direction: column;
 
 
 
 }
+
+#mainPanier{
+overflow-y: scroll;
+
+
+}
+
+#headerPanier{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+#headerPanier h3{
+color:var(--ChocoMarron);
+text-align: center;
+font-size: x-large;
+}
+
+#headerPanier h3::first-letter{
+    color:var(--ChocoOrange);
+    
+    }
+
+
+
+
+
 
 .showPanier{
 
@@ -216,6 +248,23 @@ transition: right 0.5s linear, display 0s linear 600ms;
 
 right: -150vw;
 
+
+
+}
+
+#footerPanier{
+display: flex;
+flex-direction: column;
+padding: 15px;
+width: 100%;
+
+
+}
+
+#footerPanier button{
+width: 50%;
+margin: 20px auto;
+height: 30px;
 
 
 }
@@ -401,8 +450,8 @@ justify-content: space-between;
 
 
     #panier{
-        width: 60%;
-        height: 100%;
+        width: 40%;
+        height: 100vh;
         
         
         
