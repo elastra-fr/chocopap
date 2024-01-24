@@ -1,0 +1,13 @@
+
+.customInputNumber{
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    text-align: center;
+    width: 100px;
+}
+
+.customInputNumber::-webkit-inner-spin-button {
+    opacity: 1;
+
+  }

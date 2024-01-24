@@ -44,6 +44,7 @@ top: 0;
 
 
 .logo{width: 80px;
+margin: 15px;    
 }
 
 .logo:hover{
@@ -51,7 +52,20 @@ cursor: pointer;
 
 }
 
-.icCart{width: 50px;}
+#panierHeader svg{
+
+width: 35px;
+fill: var(--ChocoOrange);
+
+filter: 
+    drop-shadow(-1px -1px 0px var(--ChocoMarron)) 
+    drop-shadow(1px -1px 0px var(--ChocoMarron)) 
+    drop-shadow(1px 1px 0px var(--ChocoMarron))
+    drop-shadow(-1px 1px 0px var(--ChocoMarron))
+
+
+}
+
 
 .imgAcc{
 left: 90vw;
@@ -91,11 +105,14 @@ list-style: none;
 padding: 5px;
 justify-self: center;
 font-weight: bold;
-
+font-size: 1.25em;
+color: var(--ChocoBleu);
 }
 
 #mainNav ul li:hover{
 cursor: pointer;
+color: var(--ChocoMarron);
+scale: 1.2;
 
 }
 
@@ -323,6 +340,12 @@ cursor: pointer;
     margin-left: 5px;
 }
 
+#nbResult{
+padding: 15px;
+margin-left: 50px;
+font-size: 1.2em;
+
+}
 
 /****************************Fiche produit seul********************************************/
 #singleProductMain{

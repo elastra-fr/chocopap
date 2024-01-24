@@ -66,7 +66,7 @@ left: 15px;
     .leftArrow svg, .rightArrow svg{
 height: 48px;
 width: 48px;
-fill: white;
+fill: var(--ChocoBlanc);
 
     }
 
@@ -81,7 +81,7 @@ fill: white;
     .imgDot{
         height: 15px;
         width: 15px;
-        background-color: white;
+        background-color: var(--ChocoBlanc);
         border-radius: 50%;
         display: inline-block;
         margin-left: 10px;
@@ -107,7 +107,7 @@ fill: white;
         text-align: center;
         top: 25%;
         font-size: 2em;
-        color: white;
+        color: var(--ChocoBleu);
 
 
     }
@@ -116,8 +116,8 @@ fill: white;
         position: absolute;
         display: block;
         padding: 25px;
-        border: 3px solid white;
-        color: white;
+        border: 3px solid var(--ChocoBleu);
+        color: var(--ChocoBlanc);
         font-size: 1em;
         font-weight: bolder;
         top: 50%;
@@ -128,3 +128,5 @@ fill: white;
 
 
     }
+
+ 

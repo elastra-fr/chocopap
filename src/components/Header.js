@@ -7,74 +7,24 @@ import { useState, useEffect } from 'react'
 function Header({close, cartCount}) {
 
 const [showNav, setShowNav]= useState(false);
-//const [cartCount, setcartCount]= useState(0);
-/*
-function checkDataStorage(){
-//let myCart= [{id:"3", qte:"4"}, {id:"2", qte:"5"}, {id:"2", qte:"4"} ];
-//myCart.push({id:"12", qte:"3"});
 
-//localStorage.setItem("myCart", JSON.stringify(myCart));
+      const handleShowNav= ()=>{
 
+      setShowNav(!showNav);
 
-if(localStorage.getItem("myCart"))
-{
-  let cart = JSON.parse(localStorage.getItem("myCart"));
-  //console.log(Object.values(cart).length);
-  let newCount=Object.values(cart).length;  
-  setcartCount(newCount);
-
-
-}
-
-else
-
-{
-
-console.log("Mon panier est vide");
-setcartCount(0);
-}
-}
-
-
-useEffect(() => {
-
-checkDataStorage();  
-
-}, []);
-
-*/
-
-
-
-
-
-
-
-
-const handleShowNav= ()=>{
-
-setShowNav(!showNav);
-
-
-};
-
-
-
-
+      };
 
 
   return (
     <>
 <header id='mainHeader'>
 <Link to='/Homepage'><img className='logo' src={require("../images/logo.png")} alt='Logo Choco Pap'/></Link>
-<nav id='mainNav' className={`${showNav? "showNav" : "hideNav"}`}>
-<ul>
-<li><Link to='/Homepage'>Accueil</Link></li> 
-<li><Link to='/Boutique'>Boutique</Link></li>
-<li onClick={()=>close()}><Cart src={cartIc} count={cartCount}/></li>
-
-</ul>
-
+  <nav id='mainNav' className={`${showNav? "showNav" : "hideNav"}`}>
+  <ul>
+    <li><Link to='/Homepage'>ACCUEIL</Link></li> 
+    <li><Link to='/Boutique'>BOUTIQUE</Link></li>
+    <li onClick={()=>close()}><Cart src={cartIc} count={cartCount}/></li>
+  </ul>
 
 </nav>
 

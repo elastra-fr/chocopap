@@ -9,7 +9,7 @@ import CartItem from './CartItem';
 
 
 
-function Panier({close, showPanier, emptyCart, cartItems}) {
+function Panier({close, showPanier, emptyCart, cartItems, sumCart, removeItem}) {
 
   console.log(cartItems);
   if(cartItems){
@@ -32,7 +32,7 @@ console.log(cartItems);
 
     <div id="mainPanier"> 
 
-{cartItems !== "" && cartItems.map(item => <CartItem src={item.img} nom={item.nom} prix={item.prix} qte={item.qte}/>)}
+{cartItems !== "" && cartItems.map(item => <CartItem id={item.num} src={item.img} nom={item.nom} prix={item.prix} qte={item.qte} removeItem={removeItem}/>)}
 
 
      
@@ -40,6 +40,8 @@ console.log(cartItems);
    </div>
     
     <div id='footerPanier'>
+
+    <span>TOTAL : {sumCart} €</span>
     <button onClick={()=>{emptyCart()}}>REINITIALISER LE PANIER</button>
     <button onClick={()=>{alert("Limite du cahier des charges")}}>VALIDER LE PANIER</button>
 

@@ -56,20 +56,16 @@ default:
 
 }
 
-
 }
 
-
     //Fin filtres
-
-  
+ 
     const [products, setProducts] = useState(); 
 
-
-
+    const [countProduct, setCountProduct]=useState();
 
     const fetchProducts=async()=>{
-        //console.log("Ok");
+ 
 
         const query = new Parse.Query("products");
         query.greaterThanOrEqualTo('price', priceRange.min);
@@ -84,14 +80,13 @@ default:
         if (noix===true) {query.equalTo("category.noix", true)};
         if (fruit===true) {query.equalTo("category.fruit", true)};
         if (liqueur===true) {query.equalTo("category.liqueur", true)};
-
-        
+       
         try{
             const allProducts=await query.find();
 
             
             setProducts(allProducts);
-            //console.log(allProducts[0].attributes.category.blanc);
+            setCountProduct(allProducts.length);
             
             return true;
         
@@ -108,25 +103,11 @@ default:
     useEffect(() => {
 
             fetchProducts();
+
         
       }, []);
 
 
-
-
-
-
-
-
-/*allProducts.forEach((product)=>{
-
-console.log(product.attributes);
-
-})
-}*/
-//console.log(queryResults);
-
-//fetchProducts();
 
 const handleChange=(e)=>{
 
@@ -193,13 +174,7 @@ alert(e.currentTarget.checked);
 
   }
 
-
-  //setPriceRange({min:Number(e.currentTarget.value), max:100});
-
-  
-  
-
-    }
+}
 
     useEffect(() => {
 
@@ -223,6 +198,7 @@ document.title="Boutique - CHOCO PAP";
 
 
 let { id } = useParams();
+
 return (
 
 
@@ -338,24 +314,16 @@ return(
 
 </div>
 
+<div>
+
+<div>
+
+<span id="nbResult">Résultats : {countProduct} produit(s)</span>
+
+</div>
 
 <section id='products'>
 
-{/*Data.map((produit, index)=>{
-
-return(
-
-<CardProduct key={index} id={produit.id} urlImage={produit.image} name={produit.title} price={produit.price} note={produit.note} />
-
-)
-
-
-
-
-})
-
-
-*/}
 
 {products !== undefined &&
               products.map((item, index) => (
@@ -377,8 +345,10 @@ return(
 
 </div>
 
+</div>
 
-<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems}/>
+
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem}/>
 
 </main>
 

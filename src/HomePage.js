@@ -29,7 +29,7 @@ export default function HomePage(props) {
 <Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
 <main>
 <NewCarousel images={carouselImg} />
-<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems}/>
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem}/>
 </main>
 <Footer/>
 

@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
 import Panier from './components/Panier';
+import CustomNumberInput from './components/CustomNumberInput';
 
 const app_id=process.env.REACT_APP_ID;
 const host_url=process.env.REACT_APP_HOST_URL;
@@ -19,6 +20,7 @@ Parse.serverURL=host_url;
 
 
 function FicheProduit(props) {
+  console.log(props);
 
   const [showPanier, setShowPanier]= useState(false);
 
@@ -44,7 +46,13 @@ function FicheProduit(props) {
 
 
 const [product, setProduct] = useState(); 
+const [qte, setQte] = useState(1); 
 
+const handleChange=(event)=>{
+
+  setQte(event.target.value);
+
+}
 
 
 const fetchProduct=async()=>{
@@ -95,8 +103,10 @@ useEffect(() => {
 <h1 className='singleProductTitle'>{product[0].attributes.title}</h1>
 <span className='singleProductPrice'>{product[0].attributes.price + " €"}</span>
 <p>{product[0].attributes.description}</p>
-<div><input className='singleProductQte' type='number' defaultValue="1" min="1" max="999"></input></div>
-<div><input type='button' value="Ajouter au panier"></input></div>
+{/*<div><input className='singleProductQte' onChange={handleChange} type='number' value={qte} min="1" max="999"></input></div>*/}
+<CustomNumberInput id={"ipt"+id} value={qte} change={handleChange}/>
+<div><input type='button' value="Ajouter au panier" onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}}></input></div>
+
 </div>
 <div id='singleProductImg'>
   <img src={"."+product[0].attributes.image} alt={'Illustration du produit '+product[0].attributes.title}></img>
@@ -107,7 +117,7 @@ useEffect(() => {
   <h4>Ingrédients</h4>
   <p id='ingList'>{product[0].attributes.ingredients}</p>
 </div>
-<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems}/>
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem}/>
 </main>}
     <Footer/>
   

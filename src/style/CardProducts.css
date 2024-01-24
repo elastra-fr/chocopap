@@ -115,6 +115,28 @@ color: var(--ChocoNoir);
 
 }
 
+#starsCont{
+display: flex;
+align-items: baseline;
+
+}
+
+#starsCont svg{
+height: 14px;
+
+}
+
+.starChecked{
+fill: var(--ChocoOrange);
+
+}
+
+.starUnchecked{
+    fill: var(--ChocoMarron);
+    
+    }
+    
+
 
 @media screen and (min-width:768px){
     
