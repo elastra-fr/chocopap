@@ -3,6 +3,7 @@ import {emptyItemsCart} from './utils'
 //import CartItem from './CartItem'
 import {useState, useEffect} from 'react'
 import CartItem from './CartItem';
+import CustomButton from './CustomButton';
 //import CartItem from './CartItem';
 
 
@@ -42,8 +43,10 @@ console.log(cartItems);
     <div id='footerPanier'>
 
     <span>TOTAL : {sumCart} €</span>
-    <button onClick={()=>{emptyCart()}}>REINITIALISER LE PANIER</button>
-    <button onClick={()=>{alert("Limite du cahier des charges")}}>VALIDER LE PANIER</button>
+    {/*<button onClick={()=>{emptyCart()}}>REINITIALISER LE PANIER</button>
+    <button onClick={()=>{alert("Limite du cahier des charges")}}>VALIDER LE PANIER</button>*/}
+    <CustomButton onClick={()=>{emptyCart()}} text="REINITIALISER LE PANIER"/>
+    <CustomButton onClick={()=>{alert("Limite du cahier des charges")}} text="VALIDER LE PANIER"/>
 
       
     </div>

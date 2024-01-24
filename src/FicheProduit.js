@@ -7,6 +7,8 @@ import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
 import Panier from './components/Panier';
 import CustomNumberInput from './components/CustomNumberInput';
+import { useNavigate } from 'react-router-dom';
+import CustomButton from './components/CustomButton';
 
 const app_id=process.env.REACT_APP_ID;
 const host_url=process.env.REACT_APP_HOST_URL;
@@ -89,7 +91,7 @@ useEffect(() => {
   }, []);
 
 
-
+const navigate=useNavigate();
 
 
   return (
@@ -97,7 +99,8 @@ useEffect(() => {
 <Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
 
 
-{product !==undefined && <main id='singleProductMain'>    
+{product !==undefined && <main id='singleProductMain'>
+<div><span id="backToShop" onClick={()=>{navigate(-1)}}>Revenir à la recherche</span></div>    
 <div id="infosWrapper">
 <div id='singleProductInfos'>
 <h1 className='singleProductTitle'>{product[0].attributes.title}</h1>
@@ -105,7 +108,9 @@ useEffect(() => {
 <p>{product[0].attributes.description}</p>
 {/*<div><input className='singleProductQte' onChange={handleChange} type='number' value={qte} min="1" max="999"></input></div>*/}
 <CustomNumberInput id={"ipt"+id} value={qte} change={handleChange}/>
-<div><input type='button' value="Ajouter au panier" onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}}></input></div>
+<div>{/*<input type='button' value="Ajouter au panier" onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}}></input>*/}<CustomButton onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}} text="Ajouter au panier"/></div>
+
+
 
 </div>
 <div id='singleProductImg'>

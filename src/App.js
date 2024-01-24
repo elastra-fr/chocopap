@@ -159,10 +159,7 @@ console.log(cart.length);
 
     }
 
-
-
-
-
+   
 
 
   return (

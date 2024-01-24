@@ -106,7 +106,7 @@ padding: 5px;
 justify-self: center;
 font-weight: bold;
 font-size: 1.25em;
-color: var(--ChocoBleu);
+color: var(--ChocoOrange);
 }
 
 #mainNav ul li:hover{
@@ -191,6 +191,7 @@ background-color: var(--ChocoGris);
 display: flex;
 flex-direction: row;
 margin: 10px;
+justify-content: space-evenly;
 
 
 }
@@ -199,8 +200,16 @@ margin: 10px;
 #socials svg{
 height: 48px;
 width: 48px;
+fill: white
 
 }
+
+#socials svg:hover{
+cursor: pointer;
+fill: var(--ChocoOrange);
+
+}
+
 
 main{min-height: 80vh;}
 
@@ -374,6 +383,7 @@ object-fit: cover;
 
 width: 100%;
 border-radius: 20px;
+object-fit: cover;
 }
 
 #singleProductImg{
@@ -422,6 +432,22 @@ opacity: 1;
                     color: var(--ChocoOrange);
                     
                         }
+
+#backToShop{
+width: fit-content;
+padding: 15px;
+margin-left: 50px;
+font-size: 0.9em;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#backToShop:hover{
+cursor: pointer;
+}
+
+
 
 /**************************************Media Queries*******************************/
 
@@ -494,7 +520,7 @@ justify-content: space-between;
         #singleProductMain{
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 0.1fr 2fr 2fr;
 
             
             
