@@ -27,7 +27,7 @@ export default function HomePage(props) {
   return (
     <div className='container'>
 <Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
-<main>
+<main id="homeMain">
 <NewCarousel images={carouselImg} />
 <Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem}/>
 </main>
