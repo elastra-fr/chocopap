@@ -21,7 +21,6 @@ function App() {
     if(localStorage.getItem("myCart"))
     {
       let cart = JSON.parse(localStorage.getItem("myCart"));
-      //console.log(Object.values(cart).length);
       let newCount=Object.values(cart).length;  
       setCartCount(newCount);
       setCart(cart);
@@ -33,9 +32,10 @@ function App() {
     
     {
     
-    console.log("Mon panier est vide");
     setCartCount(0);
     }
+totalCart();
+
     }
 
     function totalCart(){
@@ -43,15 +43,12 @@ function App() {
           let subTotal=[];
           let total=0;
 
-      //let str=JSON.stringify(cart);
-console.log(cart.length);
 
       if(cartCount>0)
       {
         for (let i=0;i<cartCount;i++){
 
-          //console.log(cart[i].prix);
-          //console.log(cart[i].qte)
+     
           subTotal.push(cart[i].prix*cart[i].qte);
           total = subTotal.reduce((accumulator, currentValue) => {
             return accumulator + currentValue
@@ -64,7 +61,8 @@ console.log(cart.length);
 
 
       }
-
+      
+      console.log(subTotal);
       setSumCart(total.toFixed(2));
 
 
@@ -75,10 +73,18 @@ console.log(cart.length);
     
     checkDataStorage();
     totalCart();
-    console.log(JSON.stringify(cart));
+  
 
     
     }, [cartCount]);
+
+    useEffect(() => {
+    
+      totalCart();
+    
+  
+      
+      }, [cart]);
 
 
 
@@ -128,33 +134,59 @@ console.log(cart.length);
     
     }
     checkDataStorage();
-    //console.log(cart);
         
         };
+
+
+
+
   
-  
+  //Fonction qui vide le panier
   const emptyItemsCart=()=>{
 
     localStorage.removeItem("myCart");
     setCart("");
     console.clear();
-    console.log("Panier vidé depuis app.js");
     checkDataStorage();
     };
 
 
+    //Fonction qui met à jour la quantité d'un item du panier
+    function updateItem(id, nb){
+
+      //console.log(nb);
+      let localCart = JSON.parse(localStorage.getItem("myCart"));
+      const index = localCart.map(object => object.num).indexOf(id);
+      localCart[index].qte=nb;
+      setCart(JSON.stringify(localCart));
+     // console.log("localCart :"+localCart[index].qte);
+      localStorage.setItem("myCart", JSON.stringify(localCart));
+     
+      console.log("cart :"+cart);
+      //totalCart();
+      checkDataStorage();
+
+    }
+
+
+
+//Fonction qui supprime un item du panier
     function removeItem(id){
-      console.log(id);
+      
 
       let localCart = JSON.parse(localStorage.getItem("myCart"));
-      const indexToRemove = localCart.map(object => object.num).indexOf(id);
-      //const afterRemove = localCart.map(object => object.num).filter(!id);
-    let afterRemove=localCart.filter((item)=>item.num.search(id));
-      //console.log(indexToRemove);
-       console.log(afterRemove);
-      //localCart.delete(indexToRemove);
+      let afterRemove=localCart.filter((item)=>item.num.search(id));
       localStorage.setItem("myCart", JSON.stringify(afterRemove));
+
+      if (afterRemove.length >0){
       setCart(JSON.stringify(afterRemove));
+      }
+
+      else{
+        emptyItemsCart();
+
+      }
+
       checkDataStorage();
 
     }
@@ -165,10 +197,10 @@ console.log(cart.length);
   return (
   <div>
       <Routes>
-      <Route exact path='/' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart}/>} removeItem={removeItem}/>    
-    <Route exact path='/Homepage' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem}/>} />
-    <Route path='/Boutique' element={<Boutique emptyCart={emptyItemsCart} gestionCart={gestionCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem}/>} />
-    <Route path='/FicheProduit/:id' element={<FicheProduit emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} gestionCart={gestionCart} sumCart={sumCart} removeItem={removeItem}/>} />
+      <Route exact path='/' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart}/>} removeItem={removeItem} updateItem={updateItem}/>    
+    <Route exact path='/Homepage' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
+    <Route path='/Boutique' element={<Boutique emptyCart={emptyItemsCart} gestionCart={gestionCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
+    <Route path='/FicheProduit/:id' element={<FicheProduit emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} gestionCart={gestionCart} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
     </Routes>
   </div>
   

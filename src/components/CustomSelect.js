@@ -5,7 +5,6 @@ const CustomSelect = () => {
 
     const handleChange = (event) => {
         const selectedOption = event.target.value;
-        // Do something with the selected option
     };
 
     return (
@@ -20,3 +19,5 @@ const CustomSelect = () => {
 };
 
 export default CustomSelect;
+
+

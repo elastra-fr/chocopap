@@ -13,7 +13,6 @@ const [showNotes, setShowNotes]= useState(false);
 
 const handleFilters=event=>{
 
-  //console.log(event.currentTarget.id);
 
 switch(event.currentTarget.id)
 {

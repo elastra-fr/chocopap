@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './CartItem.css'
 import CustomNumberInput from './CustomNumberInput'
 import{useState} from 'react'
 
 
-function CartItem({id, src, nom, prix, qte, removeItem}) {
+function CartItem({id, src, nom, prix, qte, removeItem, updateItem}) {
 
   const [localQte, setLocalQte] = useState(qte); 
 
@@ -12,9 +12,15 @@ function CartItem({id, src, nom, prix, qte, removeItem}) {
 const handleChange=(event)=>{
 
   setLocalQte(event.target.value);
-
+  updateItem(id, localQte);  
+  
 }
-//console.log(id);
+
+useEffect(() => {
+updateItem(id, localQte);
+
+}, [localQte]);
+
 
   return (
     
@@ -23,7 +29,6 @@ const handleChange=(event)=>{
         <div><img src={"."+src} alt={nom} className='cartMiniImg'/></div>
         <div className='cartItemInfos'><span>{nom}</span>
         <span>{prix + " €"}</span></div>
-        {/*<div><input type="number" defaultValue={qte}></input></div>*/}
         <CustomNumberInput id={"ipt"+nom} value={localQte} change={handleChange}/>
     
     </div>

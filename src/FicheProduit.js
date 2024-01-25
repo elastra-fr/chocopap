@@ -122,7 +122,7 @@ const navigate=useNavigate();
   <h4>Ingrédients</h4>
   <p id='ingList'>{product[0].attributes.ingredients}</p>
 </div>
-<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem}/>
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem} updateItem={props.updateItem}/>
 </main>}
     <Footer/>
   
