@@ -10,6 +10,7 @@ import {useState, useEffect} from 'react';
 
 
 export default function HomePage(props) {
+  console.log(props);
 
   document.title="Accueil - CHOCO PAP";
   
@@ -28,6 +29,8 @@ export default function HomePage(props) {
     <div className='container'>
 <Header close={handleShowPanier} showPanier={showPanier} cartCount={props.cartCount}/>
 <main id="homeMain">
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem} updateItem={props.updateItem}/>
+
 <NewCarousel images={carouselImg} />
 <Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem} updateItem={props.updateItem}/>
 </main>

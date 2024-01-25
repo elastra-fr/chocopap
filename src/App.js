@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import Boutique from './Boutique';
 import FicheProduit from './FicheProduit';
 import {useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 
 
 function App() {
@@ -24,8 +25,6 @@ function App() {
       let newCount=Object.values(cart).length;  
       setCartCount(newCount);
       setCart(cart);
-      
-     
     }
     
     else
@@ -62,7 +61,7 @@ totalCart();
 
       }
       
-      console.log(subTotal);
+      //console.log(subTotal);
       setSumCart(total.toFixed(2));
 
 
@@ -81,6 +80,7 @@ totalCart();
     useEffect(() => {
     
       totalCart();
+    
     
   
       
@@ -194,11 +194,22 @@ totalCart();
    
 
 
+    
+    const usePathname = () => {
+      const location = useLocation();
+      return location.pathname;
+    }
+
+    console.log(usePathname()); 
+
+   
+
+
   return (
   <div>
       <Routes>
-      <Route exact path='/' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart}/>} removeItem={removeItem} updateItem={updateItem}/>    
-    <Route exact path='/Homepage' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
+      <Route exact path='/' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} /> 
+         <Route exact path='/HomePage' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
     <Route path='/Boutique' element={<Boutique emptyCart={emptyItemsCart} gestionCart={gestionCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
     <Route path='/FicheProduit/:id' element={<FicheProduit emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} gestionCart={gestionCart} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
     </Routes>
