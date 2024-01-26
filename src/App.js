@@ -15,7 +15,7 @@ function App() {
   const [cartCount, setCartCount]=useState()
   const [sumCart, setSumCart]=useState()
 
-
+//Fonction qui vérifie si le panier existe dans le localStorage
   function checkDataStorage(){
    
     
@@ -33,10 +33,12 @@ function App() {
     
     setCartCount(0);
     }
-totalCart();
+    totalCart();
 
     }
 
+
+    //Fonction qui calcule le total du panier
     function totalCart(){
 
           let subTotal=[];
@@ -61,7 +63,6 @@ totalCart();
 
       }
       
-      //console.log(subTotal);
       setSumCart(total.toFixed(2));
 
 
@@ -89,7 +90,7 @@ totalCart();
 
 
 
-  
+  //Fonction qui vérifie si un item est déjà dans le panier et qui l'ajoute ou le met à jour
   const gestionCart=(id, urlImage, name, pu, nb)=>{
     
   
@@ -138,6 +139,36 @@ totalCart();
         };
 
 
+  //Fonction qui retourne la quantité d'un item du panier en fonction de son id
+  const getQteItem=(id)=>{
+
+    let qte=0;
+
+    if(localStorage.getItem("myCart")){
+    let localCart = JSON.parse(localStorage.getItem("myCart"));
+    const index = localCart.map(object => object.num).indexOf(id);
+    if (index>=0)
+    {
+    qte=localCart[index].qte;
+    }
+else
+{
+qte=0;
+
+}
+
+  }
+
+ /* else
+{
+qte=0;
+
+}*/
+  return qte;
+
+  };
+
+
 
 
   
@@ -162,7 +193,7 @@ totalCart();
      // console.log("localCart :"+localCart[index].qte);
       localStorage.setItem("myCart", JSON.stringify(localCart));
      
-      console.log("cart :"+cart);
+      //console.log("cart :"+cart);
       //totalCart();
       checkDataStorage();
 
@@ -194,13 +225,13 @@ totalCart();
    
 
 
-    
+  //Fonction qui récupère le pathname (debug)
     const usePathname = () => {
       const location = useLocation();
       return location.pathname;
     }
 
-    console.log(usePathname()); 
+   // console.log(usePathname()); 
 
    
 
@@ -210,7 +241,7 @@ totalCart();
       <Routes>
       <Route exact path='/' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} /> 
          <Route exact path='/HomePage' element={<HomePage emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
-    <Route path='/Boutique' element={<Boutique emptyCart={emptyItemsCart} gestionCart={gestionCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
+    <Route path='/Boutique' element={<Boutique emptyCart={emptyItemsCart} gestionCart={gestionCart} cartItems={cart} cartCount={cartCount} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem} getQteItem={getQteItem}/>} />
     <Route path='/FicheProduit/:id' element={<FicheProduit emptyCart={emptyItemsCart} cartItems={cart} cartCount={cartCount} gestionCart={gestionCart} sumCart={sumCart} removeItem={removeItem} updateItem={updateItem}/>} />
     </Routes>
   </div>

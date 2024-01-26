@@ -327,7 +327,7 @@ return(
 
 {products !== undefined &&
               products.map((item, index) => (
-                <CardProduct close={handleShowPanier} showPanier={showPanier} gestionCart={props.gestionCart} key={index} id={/*`${item.get("id")}`*/item.id} urlImage={`${item.get("image")}`} name={`${item.get("title")}` } price={`${item.get("price")}`} note={`${item.get("note")}`}/>
+                <CardProduct close={handleShowPanier} showPanier={showPanier} gestionCart={props.gestionCart} key={index} id={/*`${item.get("id")}`*/item.id} urlImage={`${item.get("image")}`} name={`${item.get("title")}` } price={`${item.get("price")}`} note={`${item.get("note")}`} getQteItem={props.getQteItem} cartItems={props.cartItems} updateItem={props.updateItem} removeItem={props.removeItem}/>
                 
               
               ))}

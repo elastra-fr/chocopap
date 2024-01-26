@@ -1,0 +1,10 @@
+.currentCart{
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+width: 100%;
+font-size: 1.2em;
+font-weight: bolder;
+margin:5px;
+padding: 5px;
+}

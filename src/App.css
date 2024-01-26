@@ -8,7 +8,9 @@
        
     --ChocoTitres: 'Fjalla One', sans-serif;
     --ChocoTextes: 'Noto Sans', sans-serif;
-    --ChocoMaxWidth:1440px;
+    --ChocoMaxWidth:1600px;
+    --ChocoInnerWidth: 1440px;
+    
 
 
 }
@@ -19,9 +21,9 @@ font-family: var(--ChocoTextes);
 max-width: var(--ChocoMaxWidth);
 margin: 0 auto;
 min-height: 100vh;
-color: var(--ChocoBlanc);
+color: var(--ChocoNoir);
 overflow-x: hidden;
-background-color: var(--ChocoNoir);
+background-color: var(--ChocoBlanc);
 
 
 }
@@ -168,6 +170,7 @@ display: flex;
 flex-direction: column;
 background-color: var(--ChocoGris);
 padding:15px;
+color: var(--ChocoOrange);
 
 }
 
@@ -277,17 +280,11 @@ font-size: x-large;
     }
 
 
-
-
-
-
 .showPanier{
 
    display: flex;
    flex-direction: column;
    right: 0;
-
-
 
 }
 
@@ -316,7 +313,7 @@ fill: var(--ChocoOrange);
 
 #panierClose:hover>svg{
 
-    cursor: pointer;
+cursor: pointer;
 fill: var(--ChocoMarron);
 
 
@@ -372,6 +369,8 @@ height: 30px;
 #products {
 display: flex;
 flex-wrap: wrap;
+justify-content: space-evenly;
+align-items: center;
 gap:25px;
 
 }

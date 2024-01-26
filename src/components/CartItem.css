@@ -17,6 +17,11 @@ fill: var(--ChocoOrange);
 
 }
 
+.cartItemWrapper a:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+}
 .cartItemWrapper svg:hover{
 cursor: pointer;
 fill: red;

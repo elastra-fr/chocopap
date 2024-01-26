@@ -2,7 +2,6 @@ import React from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { useParams } from 'react-router-dom'
-//import Data from './data/products.json'
 import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
 import Panier from './components/Panier';
@@ -22,33 +21,19 @@ Parse.serverURL=host_url;
 
 
 function FicheProduit(props) {
-  console.log(props);
 
   const [showPanier, setShowPanier]= useState(false);
-
   const handleShowPanier= ()=>{
-  
   setShowPanier(!showPanier);
-  console.log(showPanier);
-  
-  
+
   };
 
-
-
-
-
-
+  document.title="Fiche produit - CHOCO PAP";
 
   const {id}=useParams();
 
-
-
-
-
-
-const [product, setProduct] = useState(); 
-const [qte, setQte] = useState(1); 
+  const [product, setProduct] = useState(); 
+  const [qte, setQte] = useState(1); 
 
 const handleChange=(event)=>{
 
@@ -58,7 +43,6 @@ const handleChange=(event)=>{
 
 
 const fetchProduct=async()=>{
-    //console.log("Ok");
 
     const query = new Parse.Query("products");
     query.contains('objectId', id);
@@ -72,23 +56,30 @@ const fetchProduct=async()=>{
         setProduct(allProducts);
         return true;
         
+        
     
     }
     
     catch (error){
-    //console.log(`Erreur : ${error.message}`);
     return false;
     
     }
 
-    
+  
     
     }
 
 useEffect(() => {
 
         fetchProduct();
+        
   }, []);
+
+
+  useEffect(() => {fetchProduct()}, [id]);   
+  
+  
+ 
 
 
 const navigate=useNavigate();
@@ -107,7 +98,7 @@ const navigate=useNavigate();
 <span className='singleProductPrice'>{product[0].attributes.price + " €"}</span>
 <p>{product[0].attributes.description}</p>
 {/*<div><input className='singleProductQte' onChange={handleChange} type='number' value={qte} min="1" max="999"></input></div>*/}
-<CustomNumberInput id={"ipt"+id} value={qte} change={handleChange}/>
+<CustomNumberInput id={"ipt"+id} value={qte} change={handleChange} min={1}/>
 <div>{/*<input type='button' value="Ajouter au panier" onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}}></input>*/}<CustomButton onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}} text="Ajouter au panier"/></div>
 
 

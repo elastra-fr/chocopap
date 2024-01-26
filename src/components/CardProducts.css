@@ -4,11 +4,12 @@ max-width: 350px;
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: 1fr;
-margin: 15px auto;
+margin-top: 25px;
 color:black;
 transition: transform .25s;
 height: 450px;
 border-radius: 20px;
+border: 0.5px solid var(--ChocoBleu);
 
 
 
@@ -21,7 +22,7 @@ cursor: pointer;
 }
 
 .cardWrapper:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 
 }
 
