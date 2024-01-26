@@ -5,21 +5,30 @@ import './SmartCartButton.css';
 
 const SmartCartButton = ({qte, onClick, updateItem, id, removeItem}) => {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [quantity, setQuantity] = useState(qte);
+    const [middle, setMiddle] = useState();
 
-    const handleClick = () => {
+useEffect(() => {
+    
+    setMiddle(qte); },
+    
+    []);
+
+   /* const handleClick = () => {
         if (qte > 0) {
             setIsFlipped(true);
         }
-    };
+    };*/
 
     const handleInputChange = (e) => {
-        setQuantity(e.target.value);
-        if (quantity > 0) {
-            updateItem(id, quantity);
+        //console.log(e.target.value);
+        setMiddle(e.target.value);
+   
+        if (e.target.value > 0) {
+            console.log("Middle : "+middle);
+            updateItem(id, e.target.value);
           }
     
-          else if(quantity===0){
+          else {
     console.log("remove");
             removeItem(id);
             
@@ -27,26 +36,9 @@ const SmartCartButton = ({qte, onClick, updateItem, id, removeItem}) => {
           }
     };
 
-    /*
-  useEffect(() => {
-
-    if (quantity > 0) {
-        updateItem(id, quantity);
-      }
-
-      else if(quantity===0){
-console.log("remove");
-        removeItem(id);
-        
-
-      }
-    
-
-
-  }, [quantity]);*/
 
     useEffect(() => {
-      //setQuantity(qte);
+      setMiddle(qte);
       
         if (qte > 0) {
             setIsFlipped(true);
@@ -70,10 +62,11 @@ console.log("remove");
             {!isFlipped ? (
                 <CustomButton onClick={onClick} text="Ajouter au panier" />
             ) : (
-                <div className='currentCart'><span>Panier : </span><CustomNumberInput id={"cardIpt"+id} change={handleInputChange} value={qte} min={0} /></div>
+                <div className='currentCart'><span>Panier : </span><CustomNumberInput id={"cardIpt"+id} change={handleInputChange} value={middle} min={0} /></div>
             )}
         </div>
     );
 };
 
 export default SmartCartButton;
+

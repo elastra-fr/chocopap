@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './CardProducts.css'
 import { Link } from 'react-router-dom'
-import CustomButton from './CustomButton.js'
+//import CustomButton from './CustomButton.js'
 import SmartCartButton from './SmartCartButton.js'
 import { useState } from 'react'
 
@@ -9,7 +9,7 @@ function CardProduct({close, showPanier, gestionCart, id, urlImage, name, price,
 
 let starsStatus=["starUnchecked", "starUnchecked", "starUnchecked", "starUnchecked", "starUnchecked"];
 const [localQte, setLocalQte]= useState(getQteItem(id));
-console.log("La quantité dans le panier est : "+ getQteItem(id));
+//console.log("La quantité dans le panier est : "+ getQteItem(id));
 
 
 for (let i=0 ; i<note;i++)
@@ -23,7 +23,7 @@ useEffect(() => {
 
 setLocalQte(getQteItem(id));
 
-}, [cartItems]);
+}, [cartItems, getQteItem, id]);
 
 
   return (
