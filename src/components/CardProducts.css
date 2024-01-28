@@ -1,149 +1,116 @@
-.cardWrapper{
-width: 100%;
-max-width: 350px;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 1fr;
-margin-top: 25px;
-color:black;
-transition: transform .25s;
-height: 450px;
-border-radius: 20px;
-border: 0.5px solid var(--ChocoBleu);
 
-
-
+.cardWrapper {
+    width: 100%;
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 25px;
+    color: black;
+    transition: transform .25s;
+    height: 450px;
+    border-radius: 20px;
+    border: 0.5px solid var(--ChocoBleu);
 }
 
-.cardWrapper:hover, .cardWrapper button:hover{
-cursor: pointer;
-
-
+.cardWrapper:hover,
+.cardWrapper button:hover {
+    cursor: pointer;
 }
 
-.cardWrapper:hover{
-    transform: scale(1.05);
-
-}
-
-.cardWrapper:hover>div a img{
-    max-height:280px;
+.cardWrapper:hover > div a img {
+    max-height: 280px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     margin-bottom: 0;
-
-
 }
 
-
-
-.cardWrapper img{
-height: 100%;
-width: 100%;
-object-fit: cover;
-background-origin: padding-box;
-border-radius: 20px;
-
-
-
-
-
+.cardWrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-origin: padding-box;
+    border-radius: 20px;
 }
 
-.cardWrapper:hover>div.cardFooter{
+.cardWrapper:hover > div.cardFooter {
     background-color: white;
     margin-top: 0;
 }
 
-
-.cardWrapper:hover>div.cardFooter>p.noteTag{
+.cardWrapper:hover > div.cardFooter > p.noteTag {
     color: var(--ChocoBleu);
     font-weight: bolder;
-        }
-
-.cardWrapper a{
-width: 100%;
-height: 100%;
-transition: transform .25s;
 }
 
-.cardWrapper p{
-justify-self: center;
-
+.cardWrapper a {
+    width: 100%;
+    height: 100%;
+    transition: transform .25s;
 }
-/*
-.cardWrapper button{
-    padding: 15px;
-    margin: 20px;
+
+.cardWrapper p {
+    justify-self: center;
+}
+
+#cardBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cardFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: background-color 1s;
+}
+
+
+.productName {
     font-weight: bolder;
-    font-size: 1.1em;
-    color: white;
-    background-color: var(--ChocoMarron);
-    border: none;
-
-
-
-}*/
-
-#cardBody{
-display: flex;
-flex-direction: column;
-align-items: center;
-grid-column: 1;
-grid-row: 1;
-
+    margin-top: 10px;
+    font-size: 1.15em;
+    color: var(--ChocoNoir);
 }
 
-.cardFooter{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-grid-column: 1;
-grid-row: 1;
-align-self: end;
-background-color: rgba(255,255,255,0.5);
-border-bottom-left-radius: 20px;
-border-bottom-right-radius: 20px;
-transition: background-color 1s;
+#starsCont {
+    display: flex;
+    align-items: baseline;
 }
 
-.productName{
-font-weight: bolder;
-margin-top: 10px;
-font-size: 1.15em;
-color: var(--ChocoNoir);
-
+#starsCont svg {
+    height: 14px;
 }
 
-#starsCont{
-display: flex;
-align-items: baseline;
-
+.starChecked {
+    fill: var(--ChocoOrange);
 }
 
-#starsCont svg{
-height: 14px;
-
-}
-
-.starChecked{
-fill: var(--ChocoOrange);
-
-}
-
-.starUnchecked{
+.starUnchecked {
     fill: var(--ChocoMarron);
-    
-    }
+}
     
 
 
-@media screen and (min-width:768px){
+@media screen and (min-width:768px) {
     
     .cardWrapper{
     width: 350px;
     height: 450px;
+    }
+
+    .cardWrapper:hover {
+        transform: scale(1.05);
     }
 
 

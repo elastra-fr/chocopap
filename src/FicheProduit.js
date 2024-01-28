@@ -5,9 +5,10 @@ import { useParams } from 'react-router-dom'
 import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
 import Panier from './components/Panier';
-import CustomNumberInput from './components/CustomNumberInput';
+//import CustomNumberInput from './components/CustomNumberInput';
 import { useNavigate } from 'react-router-dom';
-import CustomButton from './components/CustomButton';
+//import CustomButton from './components/CustomButton';
+import SmartCartButton from './components/SmartCartButton';
 
 const app_id=process.env.REACT_APP_ID;
 const host_url=process.env.REACT_APP_HOST_URL;
@@ -23,6 +24,9 @@ Parse.serverURL=host_url;
 function FicheProduit(props) {
 
   const [showPanier, setShowPanier]= useState(false);
+  //const [showQte, setShowQte]= useState(props.getQteItem(props.id));
+
+
   const handleShowPanier= ()=>{
   setShowPanier(!showPanier);
 
@@ -69,17 +73,38 @@ const fetchProduct=async()=>{
     
     }
 
+/*    
 useEffect(() => {
 
         fetchProduct();
         
-  }, []);
+  }, []);*/
 
 
-  useEffect(() => {fetchProduct()}, [id]);   
+  useEffect(() => {
+    
+    fetchProduct()
   
+  }, [id]);   
+
+  /*
+  useEffect(() => {
+
+if (props.getQteItem(id)>0){
+
+  setShowQte(false);
+}
+
+else  {setShowQte(true);
+}  
+
+console.log(showQte);
+//setShowQte(props.getQteItem(id))
+
+
+  }, []);  
   
- 
+ */
 
 
 const navigate=useNavigate();
@@ -98,9 +123,8 @@ const navigate=useNavigate();
 <span className='singleProductPrice'>{product[0].attributes.price + " €"}</span>
 <p>{product[0].attributes.description}</p>
 {/*<div><input className='singleProductQte' onChange={handleChange} type='number' value={qte} min="1" max="999"></input></div>*/}
-<CustomNumberInput id={"ipt"+id} value={qte} change={handleChange} min={1}/>
-<div>{/*<input type='button' value="Ajouter au panier" onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}}></input>*/}<CustomButton onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}} text="Ajouter au panier"/></div>
-
+{/*<CustomNumberInput id={"ipt"+id} value={qte} change={handleChange} min={1}/>*/}
+<div>{/*<input type='button' value="Ajouter au panier" onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}}></input>*/}{/*<CustomButton onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)}} text="Ajouter au panier"/>*/}<SmartCartButton onClick={()=>{props.gestionCart(id, product[0].attributes.image, product[0].attributes.title, product[0].attributes.price, qte)} } qte={props.getQteItem(id)} updateItem={props.updateItem} id={id} removeItem={props.removeItem}/></div>
 
 
 </div>

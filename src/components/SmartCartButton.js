@@ -13,23 +13,15 @@ useEffect(() => {
     
     []);
 
-   /* const handleClick = () => {
-        if (qte > 0) {
-            setIsFlipped(true);
-        }
-    };*/
 
     const handleInputChange = (e) => {
-        //console.log(e.target.value);
         setMiddle(e.target.value);
    
         if (e.target.value > 0) {
-            console.log("Middle : "+middle);
             updateItem(id, e.target.value);
           }
     
           else {
-    console.log("remove");
             removeItem(id);
             
     
@@ -38,7 +30,7 @@ useEffect(() => {
 
 
     useEffect(() => {
-      setMiddle(qte);
+      setMiddle(qte);               
       
         if (qte > 0) {
             setIsFlipped(true);

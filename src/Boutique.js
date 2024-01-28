@@ -36,6 +36,12 @@ const [showCat, setShowCat]= useState(false);
 const [showPrice, setShowPrice]= useState(false);
 const [showNotes, setShowNotes]= useState(false);
 
+//const elAll=document.getElementById("all");
+
+
+
+
+
 const handleFilters=event=>{
 
 switch(event.currentTarget.id)
@@ -102,10 +108,42 @@ default:
 
     useEffect(() => {
 
+
             fetchProducts();
+
 
         
       }, []);
+
+//Fonction qui reinitialise les filtres et les checkboxes quand on clique sur le bouton "Tous"
+const resetFilters=()=>{
+
+  //iteration sur les checkboxes sauf la checkbox "Tous"
+  const checkboxes=document.querySelectorAll('input[type="checkbox"]:not(#all)');
+  checkboxes.forEach((item)=>{
+
+    item.checked=false;
+
+
+  });
+
+setBlanc(false);
+setLait(false);
+setNoir(false);
+setNoix(false); 
+setFruit(false);
+setCaramel(false);
+setLiqueur(false);
+
+}
+
+//Fonction qui uncheck la checkbox "Tous" quand on coche une autre checkbox
+const uncheckCbAll=()=>{
+
+  const checkboxAll=document.getElementById("all");
+  checkboxAll.checked=false;
+
+}
 
 
 
@@ -123,49 +161,59 @@ break;
 
 case "noteMin":
   setNoteRange({min:Number(e.currentTarget.value)});
+  console.log(noteRange);
 break;
 
 case "noteMax":
   setNoteRange({max:Number(e.currentTarget.value)});
+  console.log(noteRange);
 break;
 
 case "all":
-
+resetFilters();
 break;
 
 case "whiteChoc":
   setBlanc(!blanc);
+  uncheckCbAll();
 
 break;
 
 case "milkChoc":
   setLait(!lait);
+  uncheckCbAll();
 
 break;
 
 case "blackChoc":
 setNoir(!noir);
+uncheckCbAll();
 break;
 
 case "nutChoc":
 setNoix(!noix);
+uncheckCbAll();
 break;
 
 case "fruit":
 
 setFruit(!fruit);
+uncheckCbAll();
 
 break;
 
 case "caramel":
 
 setCaramel(!caramel);
+uncheckCbAll();
 
 break;
 
 case "liqueur":
 
+
 setLiqueur(!liqueur);
+uncheckCbAll()
 
 break;
 
@@ -179,7 +227,7 @@ alert(e.currentTarget.checked);
     useEffect(() => {
 
       fetchProducts();
-  //Runs only on the first render
+  
 }, [priceRange, noteRange, blanc, lait, noir, noix, fruit, caramel, liqueur]);
 
 
@@ -191,7 +239,7 @@ document.title="Boutique - CHOCO PAP";
     const handleShowPanier= ()=>{
     
     setShowPanier(!showPanier);
-    //console.log(showPanier);
+    
     
     
     };
@@ -218,9 +266,6 @@ return (
 <div id="boutiqueWrapper">
 
 
-
-
-{/*<Filtres change={handleChange}/>*/}
 
 <div id="filters">
 <h3>FILTRES</h3>
