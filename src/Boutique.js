@@ -21,8 +21,15 @@ export default function BoutiquePage(props) {
 
 
     //Filtres
-    const [priceRange, setPriceRange] = useState({ min: 1, max: 100});
-    const [noteRange, setNoteRange] = useState({ min:0, max: 5});
+    //const [priceRange, setPriceRange] = useState({ min: 1, max: 100});
+    //const [noteRange, setNoteRange] = useState({ min:1, max: 5});
+    const [noteMin, setNoteMin]=useState(1);
+    const [noteMax, setNoteMax]=useState(5);
+
+
+    const [prixMin, setPrixMin]=useState(1);
+    const [prixMax, setPrixMax]=useState(100);
+
     const [blanc, setBlanc]=useState(false);
     const [lait, setLait]=useState(false);
     const [noir, setNoir]=useState(false);
@@ -74,10 +81,10 @@ default:
  
 
         const query = new Parse.Query("products");
-        query.greaterThanOrEqualTo('price', priceRange.min);
-        query.lessThanOrEqualTo('price', priceRange.max);
-        query.greaterThanOrEqualTo('note', noteRange.min);
-        query.lessThanOrEqualTo('note', noteRange.max);
+        query.greaterThanOrEqualTo('price', prixMin);
+        query.lessThanOrEqualTo('price', prixMax);
+        query.greaterThanOrEqualTo('note', noteMin);
+        query.lessThanOrEqualTo('note', noteMax);
 
         if (blanc===true) { query.equalTo("category.blanc", true)}; 
         if (lait===true)query.equalTo("category.lait", true);
@@ -152,21 +159,23 @@ const handleChange=(e)=>{
   switch(e.currentTarget.id){
 
 case "prixMin":
-  setPriceRange({min:Number(e.currentTarget.value)});
+  //setPriceRange({min:Number(e.currentTarget.value)});
+  setPrixMin(Number(e.currentTarget.value));
 break;
 
 case "prixMax":
-  setPriceRange({max:Number(e.currentTarget.value)});
+  //setPriceRange({max:Number(e.currentTarget.value)});
+  setPrixMax(Number(e.currentTarget.value));
 break;
 
 case "noteMin":
-  setNoteRange({min:Number(e.currentTarget.value)});
-  console.log(noteRange);
+  setNoteMin(Number(e.currentTarget.value));
+  //console.log(noteRange.min);
 break;
 
 case "noteMax":
-  setNoteRange({max:Number(e.currentTarget.value)});
-  console.log(noteRange);
+  setNoteMax(Number(e.currentTarget.value));
+ // console.log(noteRange.max);
 break;
 
 case "all":
@@ -227,8 +236,10 @@ alert(e.currentTarget.checked);
     useEffect(() => {
 
       fetchProducts();
+      console.log("Filtres notes : "+noteMin+" "+noteMax);
+      //console.log("Filtres prix : "+prixMin+" "+prixMax);
   
-}, [priceRange, noteRange, blanc, lait, noir, noix, fruit, caramel, liqueur]);
+}, [prixMin, prixMax, noteMin, noteMax, blanc, lait, noir, noix, fruit, caramel, liqueur]);
 
 
 document.title="Boutique - CHOCO PAP";
@@ -343,7 +354,7 @@ return(
 
 <div className='selectCont'>
 <label htmlFor="noteMax">Note max:</label>
-<select name="max" id="prixMax" defaultValue={"5"} onChange={handleChange}>
+<select name="max" id="noteMax" defaultValue={"5"} onChange={handleChange}>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
