@@ -54,19 +54,22 @@
     top:50%;
     justify-content: center;
     align-items: center;
+    background-color: var(--ChocoGreyTransp); 
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .leftArrow{
-    left: 15px;
+    left: 10px;
 }
 
 .rightArrow{
-    right: 15px;
+    right: 10px;
     }
 
 .leftArrow svg, .rightArrow svg{
-    height: 48px;
-    width: 48px;
+    height: 30px;
+    width: 30px;
     fill: var(--ChocoBlanc);
 }
 
@@ -100,24 +103,14 @@
     font-size: 2em;
     color: var(--ChocoBlanc);
     font-weight: bolder;
+    transition: color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out;
 
-   /* text-shadow:
-     -1px -1px 0 var(--ChocoBlanc),  
-    1px -1px 0 var(--ChocoBlanc),
-    -1px 1px 0 var(--ChocoBlanc),
-     1px 1px 0 var(--ChocoBlanc)*/
 
 
 }
 
-@supports((text-stroke: 1px var(--ChocoMarron)) or (-webkit-text-stroke: 1px var(--ChocoMarron))) {
-    .mainTitle {
-        color: transparent;
-        -webkit-text-stroke: 2px var(--ChocoBleu);
-        text-stroke: 2px var(--ChocoMarron);
-        text-shadow: none;
-    }
-}
 
 .mainButton{
     display: block;
@@ -130,7 +123,70 @@
     left: 50%;
     transform: translate(-50%,0);
     text-align: center;
+    transition: color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out;
+    
 }
+
+
+/*Theme blanc photo Acceuil 1*/
+
+.themeMainButton1{
+color: var(--ChocoBleu);
+border: 2px solid var(--ChocoBleu);
+background-color: var(--ChocoNoirTransp);
+
+}
+
+
+.themeTitle1{
+
+    color: var(--ChocoNoirTransp);
+        -webkit-text-stroke: 1px var(--ChocoBleu);
+        text-stroke: 1px var(--ChocoBleu);
+        text-shadow: none;
+
+}
+
+/*Theme Noir photo Acceuil 2*/
+
+.themeMainButton0{
+    color: var(--ChocoNoir);
+    border: 2px solid var(--ChocoNoir);
+    background-color: var(--ChocoBlancTransp);
+    
+    }
+    
+    
+    .themeTitle0{
+    
+        color: var(--ChocoBlancTransp);
+        -webkit-text-stroke: 2px var(--ChocoNoir);
+        text-stroke: 2px var(--ChocoNoir);
+        text-shadow: none;
+    
+    }
+
+/*Theme Orange Marron photo Acceuil 3*/
+
+.themeMainButton2{
+    color: var(--ChocoMarron);
+    border: 5px solid var(--ChocoMarron);
+    background-color: var(--ChocoOrangeTransp);
+    
+    }
+    
+    
+    .themeTitle2{
+    
+        color: var(--ChocoOrangeTransp);
+        -webkit-text-stroke: 1px var(--ChocoMarron);
+        text-stroke: 1px var(--ChocoMarron);
+        text-shadow: none;
+    
+    }
+
 
 
 @media screen and (min-width:768px){
@@ -145,5 +201,19 @@
 
 
 }
+
+.leftArrow svg, .rightArrow svg{
+    height: 48px;
+    width: 48px;
+}
+
+
+.leftArrow{
+    left: 15px;
+}
+
+.rightArrow{
+    right: 15px;
+    }
 
 }

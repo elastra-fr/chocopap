@@ -11,7 +11,7 @@ const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, ur
     const [qte, setQte] = useState(newQte);
     const [localQte, setLocalQte] = useState(0);
 
-    console.log("Nouvelleqte :"+qte);
+
 
 
     const handleInputChange = (e) => {
@@ -40,11 +40,9 @@ handleItem(Number(qte-1));
 
     const handleItem = (QteToSend) => {
 
-        console.log("handleItem Type :"+typeof(QteToSend));
-;
+ ;
 
 
-//console.log("localIpt :"+Number(localIpt.value));
 
         if(QteToSend>0){
 
@@ -53,7 +51,7 @@ updateItem(id, Number(QteToSend));
     }
 
     else if (QteToSend===0){
-console.log("remove item :"+id);
+
 removeItem(id);
 
     }
@@ -91,7 +89,6 @@ useEffect(() => {
     useEffect(() => {
 
         setLocalQte(newQte);     
-        console.log("fire use effect qte - NewSmartCartButton = "+ qte);
 
         if (newQte > 0) {
             setIsFlipped(true);

@@ -24,7 +24,6 @@ setLocalQte(getQteItem(id));
 
 }, [cartItems, getQteItem, id]);
 
-console.log("localQte", localQte );
 
   return (
     <div key={"produit"+id} className='cardWrapper'>

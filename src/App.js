@@ -10,6 +10,8 @@ import { useLocation } from 'react-router-dom';
 
 
 function App() {
+ 
+
 
   const [cart, setCart] = useState("")
   const [cartCount, setCartCount]=useState()
@@ -164,8 +166,7 @@ qte=0;
 qte=0;
 
 }*/
-console.log("qtefonctionItem :"+qte);
-console.log(cart);
+
   return qte;
  
 
@@ -180,7 +181,7 @@ console.log(cart);
 
     localStorage.removeItem("myCart");
     setCart("");
-    //console.clear();
+
     checkDataStorage();
     };
 
@@ -188,18 +189,18 @@ console.log(cart);
     //Fonction qui met à jour la quantité d'un item du panier
     function updateItem(id, nb){
 
-      //console.log(nb);
+      
       let localCart = JSON.parse(localStorage.getItem("myCart"));
       const index = localCart.map(object => object.num).indexOf(id);
       localCart[index].qte=nb;
       setCart(JSON.stringify(localCart));
-     // console.log("localCart :"+localCart[index].qte);
+     
       localStorage.setItem("myCart", JSON.stringify(localCart));
      
-      //console.log("cart :"+cart);
+      
       //totalCart();
       checkDataStorage();
-      console.log("update item :"+id +" Valeur"+nb);
+      
 
 
     }
@@ -208,7 +209,7 @@ console.log(cart);
 
 //Fonction qui supprime un item du panier
     function removeItem(id){
-    console.log("remove item :"+id);      
+       
 
       let localCart = JSON.parse(localStorage.getItem("myCart"));
       let afterRemove=localCart.filter((item)=>item.num.search(id));
@@ -236,7 +237,7 @@ console.log(cart);
       return location.pathname;
     }
 
-   // console.log(usePathname()); 
+  
 
    
 

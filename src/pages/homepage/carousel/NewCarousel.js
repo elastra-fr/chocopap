@@ -9,6 +9,7 @@ const [current, setCurrent]=useState(0);
 const [autoPlay, setAutoPlay]=useState(true);
 let timeOut=null;
 
+
 useEffect(()=>{
 timeOut = autoPlay && setTimeout(()=>{slideRight();}, 3000);
 
@@ -68,8 +69,8 @@ return(
 
 </div>
 
-<div className='mainTitle'><h1>CHOCO PAP</h1></div>
-<Link className='mainButton' to='/Boutique'>VOIR LA BOUTIQUE</Link>
+<div className={`mainTitle themeTitle${current}`}><h1>CHOCO PAP</h1></div>
+<Link className={`mainButton themeMainButton${current}`} to='/Boutique'>VOIR LA BOUTIQUE</Link>
 
 
 </div>

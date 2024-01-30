@@ -98,7 +98,7 @@ if (props.getQteItem(id)>0){
 else  {setShowQte(true);
 }  
 
-console.log(showQte);
+
 //setShowQte(props.getQteItem(id))
 
 

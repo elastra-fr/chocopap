@@ -8,12 +8,14 @@
 
 
 .cartItemWrapper{
-    width: 90%;
+    width: 98%;
     margin: 15px auto;
     justify-content: space-between;
     align-items: center;
-    background-color:   var(--ChocoNoir);
+    background-color:   var(--ChocoMarron);
+    border: 2px solid var(--ChocoMarron);
     padding: 25px;
+    border-radius: 20px;
 }
 
 .cartItemWrapper svg{

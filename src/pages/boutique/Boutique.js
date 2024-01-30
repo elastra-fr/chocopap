@@ -100,16 +100,18 @@ default:
             
             setProducts(allProducts);
             setCountProduct(allProducts.length);
-            
+            console.clear();
             return true;
         
         }
         
         catch (error){
-        //console.log(`Erreur : ${error.message}`);
+        console.log(`Erreur : ${error.message}`);
         return false;
         
         }
+
+
         
         }
 
@@ -158,76 +160,77 @@ const handleChange=(e)=>{
 
   switch(e.currentTarget.id){
 
-case "prixMin":
-  //setPriceRange({min:Number(e.currentTarget.value)});
-  setPrixMin(Number(e.currentTarget.value));
-break;
+      case "prixMin":
 
-case "prixMax":
-  //setPriceRange({max:Number(e.currentTarget.value)});
-  setPrixMax(Number(e.currentTarget.value));
-break;
+        setPrixMin(Number(e.currentTarget.value));
+        
+      break;
 
-case "noteMin":
-  setNoteMin(Number(e.currentTarget.value));
-  //console.log(noteRange.min);
-break;
+      case "prixMax":
+        
+        setPrixMax(Number(e.currentTarget.value));
+      break;
 
-case "noteMax":
-  setNoteMax(Number(e.currentTarget.value));
- // console.log(noteRange.max);
-break;
+      case "noteMin":
+        setNoteMin(Number(e.currentTarget.value));
+       
+      break;
 
-case "all":
-resetFilters();
-break;
+      case "noteMax":
+        setNoteMax(Number(e.currentTarget.value));
+     
+      break;
 
-case "whiteChoc":
-  setBlanc(!blanc);
-  uncheckCbAll();
+      case "all":
+      resetFilters();
+      break;
 
-break;
+      case "whiteChoc":
+        setBlanc(!blanc);
+        uncheckCbAll();
 
-case "milkChoc":
-  setLait(!lait);
-  uncheckCbAll();
+      break;
 
-break;
+      case "milkChoc":
+        setLait(!lait);
+        uncheckCbAll();
 
-case "blackChoc":
-setNoir(!noir);
-uncheckCbAll();
-break;
+      break;
 
-case "nutChoc":
-setNoix(!noix);
-uncheckCbAll();
-break;
+      case "blackChoc":
+      setNoir(!noir);
+      uncheckCbAll();
+      break;
 
-case "fruit":
+      case "nutChoc":
+      setNoix(!noix);
+      uncheckCbAll();
+      break;
 
-setFruit(!fruit);
-uncheckCbAll();
+      case "fruit":
 
-break;
+      setFruit(!fruit);
+      uncheckCbAll();
 
-case "caramel":
+      break;
 
-setCaramel(!caramel);
-uncheckCbAll();
+      case "caramel":
 
-break;
+      setCaramel(!caramel);
+      uncheckCbAll();
 
-case "liqueur":
+      break;
+
+      case "liqueur":
 
 
-setLiqueur(!liqueur);
-uncheckCbAll()
+      setLiqueur(!liqueur);
+      uncheckCbAll()
 
-break;
+      break;
 
-default:
-alert(e.currentTarget.checked);
+      default:
+      alert(e.currentTarget.checked);
 
   }
 
@@ -236,8 +239,7 @@ alert(e.currentTarget.checked);
     useEffect(() => {
 
       fetchProducts();
-      console.log("Filtres notes : "+noteMin+" "+noteMax);
-      //console.log("Filtres prix : "+prixMin+" "+prixMax);
+     
   
 }, [prixMin, prixMax, noteMin, noteMax, blanc, lait, noir, noix, fruit, caramel, liqueur]);
 
@@ -282,7 +284,7 @@ return (
 <h3>FILTRES</h3>
 
 <div id='filtreCategories' className={`filtreCont ${showCat? "showCat" : "hideCat"}`}>
-  <h4>Catégories <span id="catPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
+  <h4>Catégories <span id="catPlus" onClick={handleFilters}><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
   {categories.map((item, index)=>{
 
@@ -304,7 +306,7 @@ return(
 </div>
 
 <div id='filtrePrix' className={`filtreCont ${showPrice? "showPrice" : "hidePrice"}`}> 
-<h4>Prix <span id="prixPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
+<h4>Prix <span id="prixPlus" onClick={handleFilters}><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
 <div className='selectCont'>
 <label htmlFor="prixMin">Prix min:</label>
@@ -339,7 +341,7 @@ return(
 </div>
 
 <div className={`filtreCont ${showNotes? "showNotes" : "hideNotes"}`}>
-<h4>Notes <span id="notesPlus" onClick={handleFilters}><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
+<h4>Notes <span id="notesPlus" onClick={handleFilters}><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span></h4>
 
 <div className='selectCont'>
 <label htmlFor="noteMin">Note min:</label>

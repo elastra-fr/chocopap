@@ -11,23 +11,23 @@ const SmartCartButton = ({qte, onClick, updateItem, id, removeItem}) => {
 
 useEffect(() => {
     
-console.log("fire use effect - Middle Blank = "+ middle);
+
 
     setMiddle(qte); },
     
     []);
 
-    console.log(typeof(middle));
+
 
     const handleInputChange = (e) => {
-        console.log("fire input change - Middle = "+middle);
+      
 
         setMiddle(Number(e.target.value));
 
 
         if (Number(e.target.value) > 0) {
             updateItem(id, e.target.value);
-            //console.log("fire update item 1");
+        
           }
     
           else if (Number(e.target.value) === 0){
@@ -40,7 +40,7 @@ console.log("fire use effect - Middle Blank = "+ middle);
 
     useEffect(() => {
 
-        console.log("fire use effect qte - Middle = "+ middle);
+   
     
      
 
@@ -61,7 +61,7 @@ console.log("fire use effect - Middle Blank = "+ middle);
 
 const handleLeftButton = () => {
 
-    console.log("fire left button");
+
 
 let count = Number(middle);
 
@@ -69,7 +69,7 @@ setMiddle(count-1);
 
 if (Number(middle) > 0) {
     updateItem(id, middle);
-console.log("fire update item 2");
+
 
   }
 
@@ -85,14 +85,14 @@ console.log("fire update item 2");
 
 const handleFocus = () => {
 
-    console.log("fire focus");
+
 
     document.getElementById("cardIpt"+id).select();
 }   
 
 const handleRightButton = () => {
 
-    console.log("fire right button");
+
 
     let count = Number(middle);
 
@@ -100,7 +100,7 @@ const handleRightButton = () => {
 
 if (Number(middle) > 0) {
     updateItem(id, middle);
-    console.log("fire update item 3");
+
   }
 
   else {

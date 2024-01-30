@@ -1,8 +1,4 @@
 import React from 'react'
-//import Cart from '../Cart'
-//import cartIc from '../images/cart.svg'
-//import cartIc from '/images/cart.svg'
-//import Logo from '/images/logo.png'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Cart from '../Cart'
@@ -27,7 +23,7 @@ const [showNav, setShowNav]= useState(false);
   <ul>
     <li><Link to='/Homepage'>ACCUEIL</Link></li> 
     <li><Link to='/Boutique'>BOUTIQUE</Link></li>
-    <li onClick={()=>close()}><Cart count={cartCount}/></li>
+    <li onClick={()=>{close();setShowNav(!showNav)}}><Cart count={cartCount}/></li>
   </ul>
 
 </nav>
