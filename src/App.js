@@ -199,6 +199,8 @@ console.log(cart);
       //console.log("cart :"+cart);
       //totalCart();
       checkDataStorage();
+      console.log("update item :"+id +" Valeur"+nb);
+
 
     }
 

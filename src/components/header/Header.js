@@ -1,8 +1,11 @@
 import React from 'react'
-import Cart from './Cart'
-import cartIc from '../images/cart.svg'
+//import Cart from '../Cart'
+//import cartIc from '../images/cart.svg'
+//import cartIc from '/images/cart.svg'
+//import Logo from '/images/logo.png'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Cart from '../Cart'
 
 function Header({close, cartCount}) {
 
@@ -18,12 +21,12 @@ const [showNav, setShowNav]= useState(false);
   return (
     <>
 <header id='mainHeader'>
-<Link to='/Homepage'><img className='logo' src={require("../images/logo.png")} alt='Logo Choco Pap'/></Link>
+<Link to='/Homepage'><img className='logo' src="/images/logo.png" alt='Logo Choco Pap'/></Link>
   <nav id='mainNav' className={`${showNav? "showNav" : "hideNav"}`}>
   <ul>
     <li><Link to='/Homepage'>ACCUEIL</Link></li> 
     <li><Link to='/Boutique'>BOUTIQUE</Link></li>
-    <li onClick={()=>close()}><Cart src={cartIc} count={cartCount}/></li>
+    <li onClick={()=>close()}><Cart count={cartCount}/></li>
   </ul>
 
 </nav>

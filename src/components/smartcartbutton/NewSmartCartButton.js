@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import CustomButton from '../custombutton/CustomButton';
 import CustomNumberInput from '../CustomNumberInput';
 import './SmartCartButton.css';
+import '../custombutton/CustomButton.css';
+import { type } from '@testing-library/user-event/dist/type';
 //import { type } from '@testing-library/user-event/dist/type';
 
-const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, urlImage, name, price}) => {
+const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, urlImage, name, price, cartItems, newQte}) => {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [qte, setQte] = useState(getQte(id));
+    const [qte, setQte] = useState(newQte);
     const [localQte, setLocalQte] = useState(0);
 
-    console.log("qte :"+qte);
+    console.log("Nouvelleqte :"+qte);
 
 
     const handleInputChange = (e) => {
@@ -22,31 +24,36 @@ const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, ur
 
 
     const increment = () => {
-setQte(prevCount=>prevCount+1);
+
+setQte(prevCount=>Number(prevCount)+1);
 handleItem(Number(qte+1));
+
+
 
     }
 
     const decrement = () => {
-setQte(prevCount=>prevCount-1);
+setQte(prevCount=>Number(prevCount)-1);
 handleItem(Number(qte-1));
 
     }
 
     const handleItem = (QteToSend) => {
+
+        console.log("handleItem Type :"+typeof(QteToSend));
 ;
 
-let localIpt=document.getElementById("ipt"+id);
-console.log("localIpt :"+Number(localIpt.value));
 
-        if(localQte>0){
+//console.log("localIpt :"+Number(localIpt.value));
+
+        if(QteToSend>0){
 
 updateItem(id, Number(QteToSend));   
 
     }
 
-    else if (localQte===0){
-
+    else if (QteToSend===0){
+console.log("remove item :"+id);
 removeItem(id);
 
     }
@@ -83,45 +90,24 @@ useEffect(() => {
 
     useEffect(() => {
 
-        setLocalQte(qte);     
+        setLocalQte(newQte);     
+        console.log("fire use effect qte - NewSmartCartButton = "+ qte);
 
-        if (qte > 0) {
+        if (newQte > 0) {
             setIsFlipped(true);
    
         }    
 
         else {
             setIsFlipped(false);
+            
         }
       
         
 
 
-    }, [qte]);
+    }, [newQte]);
 
-const handleLeftButton = () => {
-setLocalQte(localQte-1);
-console.log("left button clicked");
-console.log("qte :"+qte);
-handleItem();
-
-}
-
-const handleRightButton = () => {
-
-setLocalQte(localQte+1);
-console.log("right button clicked");
-console.log("qte :"+qte);
-handleItem();
-
-}
-
-
-
-
-
-
-   
     
 
 
@@ -130,9 +116,11 @@ handleItem();
     return (
         <div>
             {!isFlipped ? (
-                <input type='button' value="Ajouter au panier" onClick={()=>{gestionCart(id, urlImage, name, price,1)}}/>
+              
+                <CustomButton onClick={()=>{gestionCart(id, urlImage, name, price,1)}} text={"Ajouter au panier"}/>
             ) : (
-                <div className='currentCart'><span>Panier : <input type='button' value="-" onClick={()=>{decrement()}}/></span><input type='number' id={"ipt"+id} value={localQte} onChange={handleInputChange} /><input type='button' value="+" onClick={()=>{increment()}}/></div>
+                <div className='currentCart'><span>Panier : <CustomButton onClick={()=>{decrement()}} text={"-"}/>{/*<input type='button' value="-" onClick={()=>{decrement()}}/>*/}</span><CustomNumberInput id={"cardIpt"+id} change={handleInputChange} value={Number(localQte)} min={0} />{/*<input type='number' id={"ipt"+id} value={localQte} onChange={handleInputChange} />*/}{/*<input type='button' value="+" onClick={()=>{increment()}} />*/} <CustomButton onClick={()=>{increment()}} text={"+"}/></div>
+
             )}
         </div>
     );

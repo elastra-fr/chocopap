@@ -47,8 +47,8 @@ console.log("localQte", localQte );
                 <p className='noteTag'>{" ("+note+"/5)"}</p>
         </div>
 
-        <SmartCartButton onClick={()=>{gestionCart(id, urlImage, name, price, 1)} } qte={localQte} updateItem={updateItem} id={id} removeItem={removeItem}/>
-        <NewSmartCartButton id={id} getQte={getQteItem} updateItem={updateItem} removeItem={removeItem} gestionCart={gestionCart} urlImage={urlImage} name={name} price={price} />
+        {/*<SmartCartButton onClick={()=>{gestionCart(id, urlImage, name, price, 1)} } qte={localQte} updateItem={updateItem} id={id} removeItem={removeItem}/>*/}
+        <NewSmartCartButton id={id} getQte={getQteItem} newQte={localQte} updateItem={updateItem} removeItem={removeItem} gestionCart={gestionCart} urlImage={urlImage} name={name} price={price} />
         
        </div>
 
