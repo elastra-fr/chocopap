@@ -1,13 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CardProduct from './components/CardProduct';
-import './style/Filtres.css'
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import CardProduct from '../../components/cardproduct/CardProduct';
 import {useState, useEffect} from 'react';
-import Panier from './components/Panier';
+import Panier from '../../components/Panier';
 import Parse from 'parse/dist/parse.min.js';
-import CheckBoxWithLabel from './components/CheckBoxWithLabel'
+import CheckBoxWithLabel from '../../components/CheckBoxWithLabel'
+import './Filtres.css';
 
 const app_id=process.env.REACT_APP_ID;
 const host_url=process.env.REACT_APP_HOST_URL;
@@ -374,7 +374,7 @@ return(
 
 <div>
 
-<span id="nbResult">Résultats : {countProduct} produit(s)</span>
+<span id="nbResult">Résultat : {countProduct} produit(s)</span>
 
 </div>
 

@@ -2,9 +2,9 @@
 import './App.css';
 import './components/Cart';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './HomePage';
-import Boutique from './Boutique';
-import FicheProduit from './FicheProduit';
+import HomePage from './pages/homepage/HomePage';
+import Boutique from './pages/boutique/Boutique';
+import FicheProduit from './pages/ficheproduit/FicheProduit';
 import {useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -164,7 +164,10 @@ qte=0;
 qte=0;
 
 }*/
+console.log("qtefonctionItem :"+qte);
+console.log(cart);
   return qte;
+ 
 
   };
 
@@ -177,7 +180,7 @@ qte=0;
 
     localStorage.removeItem("myCart");
     setCart("");
-    console.clear();
+    //console.clear();
     checkDataStorage();
     };
 
@@ -203,7 +206,7 @@ qte=0;
 
 //Fonction qui supprime un item du panier
     function removeItem(id){
-      
+    console.log("remove item :"+id);      
 
       let localCart = JSON.parse(localStorage.getItem("myCart"));
       let afterRemove=localCart.filter((item)=>item.num.search(id));

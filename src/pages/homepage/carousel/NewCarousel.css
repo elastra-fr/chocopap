@@ -1,0 +1,131 @@
+.carouselWrapper{
+    background-color: var(--ChocoNoir)
+}
+
+.carousel, .carouselCard, .leftArrow, .rightArrow {
+    display: flex;
+}
+
+.carouselCard, .leftArrow, .rightArrow, .carouselDots, .mainTitle, .mainButton{
+    position: absolute;
+}
+
+.carousel, .carouselWrapper, .carouselCard, .cardImage, .mainTitle{
+    width: 100%;
+}
+
+.leftArrow, .rightArrow, .imgDot, .mainButton{
+    cursor: pointer;
+}
+
+
+
+.carousel{
+    height: 80vh;
+    max-width: var(--ChocoMaxWidth);
+    margin: 0 auto;
+}
+.carouselWrapper{
+    position: relative;
+    height: 100%;
+}
+
+.carouselCard{
+    flex:1;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none ;
+    transform: scale(0.8);
+    transition: 0.5s ease-in-out;
+}
+
+.cardImage{
+    object-fit: cover;
+}
+
+.carouselCardActive{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: visible;
+}
+
+.leftArrow, .rightArrow{
+    top:50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftArrow{
+    left: 15px;
+}
+
+.rightArrow{
+    right: 15px;
+    }
+
+.leftArrow svg, .rightArrow svg{
+    height: 48px;
+    width: 48px;
+    fill: var(--ChocoBlanc);
+}
+
+.carouselDots{
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.imgDot{
+    height: 15px;
+    width: 15px;
+    background-color: var(--ChocoBlanc);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.imgDot:hover{
+    transform: scale(1.2);
+}
+
+.imgDotActive{
+
+    background-color: grey;
+}
+
+.mainTitle{
+    text-align: center;
+    top: 25%;
+    font-size: 2em;
+    color: var(--ChocoBlanc);
+}
+
+.mainButton{
+    display: block;
+    padding: 25px;
+    border: 5px solid var(--ChocoBlanc);
+    color: var(--ChocoBlanc);
+    font-size: 1.2em;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0);
+    text-align: center;
+}
+
+
+@media screen and (min-width:768px){
+
+.mainTitle{
+    font-size: 4em;
+}
+
+.mainButton{
+    font-size: 2em;
+    padding: 40px;
+
+
+}
+
+}

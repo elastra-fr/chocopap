@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import './CardProducts.css'
 import { Link } from 'react-router-dom'
-import SmartCartButton from './SmartCartButton.js'
+import SmartCartButton from '../smartcartbutton/SmartCartButton.js'
+import NewSmartCartButton from '../smartcartbutton/NewSmartCartButton.js'
 import { useState } from 'react'
 
 function CardProduct({close, showPanier, gestionCart, id, urlImage, name, price, note, getQteItem, cartItems, updateItem, removeItem}) {
@@ -23,6 +24,7 @@ setLocalQte(getQteItem(id));
 
 }, [cartItems, getQteItem, id]);
 
+console.log("localQte", localQte );
 
   return (
     <div key={"produit"+id} className='cardWrapper'>
@@ -46,6 +48,7 @@ setLocalQte(getQteItem(id));
         </div>
 
         <SmartCartButton onClick={()=>{gestionCart(id, urlImage, name, price, 1)} } qte={localQte} updateItem={updateItem} id={id} removeItem={removeItem}/>
+        <NewSmartCartButton id={id} getQte={getQteItem} updateItem={updateItem} removeItem={removeItem} gestionCart={gestionCart} urlImage={urlImage} name={name} price={price} />
         
        </div>
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import NewCarousel from './components/NewCarousel';
-import { carouselImg } from './components/Data';
-import Panier from './components/Panier';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import NewCarousel from './carousel/NewCarousel';
+import { carouselImg } from '../../components/Data';
+import Panier from '../../components/Panier';
 import {useState, useEffect} from 'react';
 
 

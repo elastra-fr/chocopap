@@ -1,0 +1,62 @@
+.cartItemWrapper a:hover, .cartItemWrapper svg:hover{
+    cursor: pointer;    
+}
+
+.cartItemInfos, .cartItemWrapper{
+    display: flex;
+    }
+
+
+.cartItemWrapper{
+    width: 90%;
+    margin: 15px auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color:   var(--ChocoNoir);
+    padding: 25px;
+}
+
+.cartItemWrapper svg{
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    fill: var(--ChocoOrange);
+}
+
+.cartItemWrapper a:hover{
+    text-decoration: none;
+}
+
+.cartItemWrapper svg:hover{
+    fill: red;
+}
+
+.cartMiniImg{
+    height: 75px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.cartItemInfos{
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    padding: 10px;
+    color: var(--ChocoBlanc);
+    font-weight: bolder;
+}
+
+@media screen and (min-width:768px){
+
+    .cartItemWrapper{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2fr 3fr 1fr;
+        
+        }
+
+
+
+
+}

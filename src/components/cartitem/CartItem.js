@@ -1,6 +1,6 @@
 import React from 'react'
 import './CartItem.css'
-import CustomNumberInput from './CustomNumberInput'
+import CustomNumberInput from '../CustomNumberInput'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 

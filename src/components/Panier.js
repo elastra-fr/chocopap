@@ -1,8 +1,8 @@
 import React from 'react'
 import {emptyItemsCart} from './utils'
 import {useState, useEffect} from 'react'
-import CartItem from './CartItem';
-import CustomButton from './CustomButton';
+import CartItem from './cartitem/CartItem';
+import CustomButton from './custombutton/CustomButton';
 
 
 

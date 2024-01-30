@@ -1,10 +1,10 @@
 import React from 'react'
 import './CustomNumberInput.css'
 
-function CustomNumberInput({id, value, change, min}) {
+function CustomNumberInput({id, value, change, min, focus}) {
   return (
     <div key={id}>
-        <input className="customInputNumber" type="number" id={value} value={value} onChange={change} min={min} max="999"/>
+        <input className="customInputNumber" type="number" id={id} value={value} onFocus={focus} onChange={change} min={min} max="999"/>
     </div>
   )
 }

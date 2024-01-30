@@ -1,14 +1,14 @@
 import React from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 import { useParams } from 'react-router-dom'
 import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
-import Panier from './components/Panier';
+import Panier from '../../components/Panier';
 //import CustomNumberInput from './components/CustomNumberInput';
 import { useNavigate } from 'react-router-dom';
 //import CustomButton from './components/CustomButton';
-import SmartCartButton from './components/SmartCartButton';
+import SmartCartButton from '../../components/smartcartbutton/SmartCartButton';
 
 const app_id=process.env.REACT_APP_ID;
 const host_url=process.env.REACT_APP_HOST_URL;
