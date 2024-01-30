@@ -1,0 +1,196 @@
+header{
+    position: sticky;
+    top: 0;
+        z-index: 10;
+        background-color: var(--ChocoGris);
+        padding-top: 10px;
+    }
+
+    #mainHeader{
+
+       /* display: flex;
+        justify-content: space-between;
+        align-items: center;*/
+
+    }
+    
+    
+    .logo{width: 80px;
+    margin: 15px;    
+    }
+    
+    .logo:hover{
+        cursor: pointer;
+        
+        }
+
+    
+    #panierHeader svg{
+    
+    width: 35px;
+    fill: var(--ChocoOrange);
+    
+    filter: 
+        drop-shadow(-1px -1px 0px var(--ChocoMarron)) 
+        drop-shadow(1px -1px 0px var(--ChocoMarron)) 
+        drop-shadow(1px 1px 0px var(--ChocoMarron))
+        drop-shadow(-1px 1px 0px var(--ChocoMarron))
+    
+    
+    }
+    
+    
+    .imgAcc{
+    left: 90vw;
+    margin: 0 auto;
+    
+    }
+    
+    #mainNav{
+    position: relative;
+    z-index: 5;
+    transition: left 1s;
+    
+    
+    }
+    
+    .showNav{
+        left: 0;
+        height: auto;
+    
+    }
+    
+    .hideNav{
+    
+       
+    top: -100vh;
+    height: 0;
+    }
+    
+    #mainNav ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    
+    }
+    
+    #mainNav ul li{
+    padding: 5px;
+    justify-self: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--ChocoBleu);
+    margin: 15px;
+
+    }
+    
+    #mainNav ul li:hover{
+    cursor: pointer;
+    color: var(--ChocoMarron);
+    
+    }
+
+    #mainNav ul li:active{
+        color: var(--ChocoOrange);
+    }
+    
+    a{
+    all:unset;
+    
+    }
+    
+    
+    
+    
+    
+    .burgerMenu{
+        display: block;
+    position: absolute;
+    top: 39px;
+    right: 10px;
+
+    
+    }
+
+    .burgerMenu svg{
+
+        fill: var(--ChocoMarron);
+    }
+    
+    .burgerMenu:active{
+        fill: var(--ChocoOrange);
+    }
+    
+    #cartCount{
+    height: 25px;
+    width: 25px;
+    font-size: 0.9rem;
+    color: var(--ChocoNoir);
+    font-weight: bolder;
+    background-color: var(--ChocoOrange);
+    border: 2px solid var(--ChocoMarron);
+    border-radius: 15%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+    }
+    
+    main{
+        min-height: 80vh;
+    }
+    
+    
+    
+    
+    @media screen and (min-width:768px){
+
+        .burgerMenu{
+            display: none;
+        }
+        
+    #mainHeader{
+    display: flex;
+    justify-content: space-between;
+
+    
+    }
+    
+    #mainNav{
+    
+      
+    
+        width: 30%;
+       top: unset;
+        position: static;
+        align-self: center;
+        height: auto;
+    
+    }
+    
+     
+    
+    
+    #mainNav ul{
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+        
+        }
+
+        #mainNav ul li:hover{
+            cursor: pointer;
+            color: var(--ChocoMarron);
+            scale: 1.2;
+            
+            }
+
+
+
+    }
