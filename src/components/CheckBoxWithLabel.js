@@ -1,24 +1,20 @@
 import React from 'react'
+import { useState } from 'react'
 
 function CheckBoxWithLabel({title, value, change}) {
 
-let checkedValue = "";
 
-if(value === 'all'){
-    
-  checkedValue = "checked";
 
-  
-  }
 
-  else{
-    checkedValue = "";  
-  }
+
+
+
+
 
 
   return (
     <div className='checkWithLabel' key={title}>
-        <input type="checkbox" id={value} name={title} value={value} onChange={change} checkedValue={checkedValue}/>
+        <input type="checkbox" id={value} name={title} value={value} onChange={change} />
   <label htmlFor={value}>{title}</label>
     </div>
   )

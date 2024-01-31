@@ -1,13 +1,41 @@
 .currentCart{
 display: flex;
-align-items: baseline;
+align-items: center;
 justify-content: space-between;
 width: 100%;
-font-size: 1.2em;
+font-size: 1em;
 font-weight: bolder;
 margin:5px;
 padding: 5px;
 }
+
+.substitute{
+
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 50px;
+    display:unset;
+
+}
+
+input[type="number"]{
+    display: none;
+                
+    }
+
+    @media screen and (min-width:768px){
+        .substitute{
+            display: none;
+        }
+        input[type="number"]{
+            display: unset;
+        }
+        
+    }
+
 
 
 

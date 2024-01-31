@@ -1,21 +1,23 @@
 
 .cardWrapper, .cardWrapper img, .cardWrapper a{
-    width: 100%;
+    width: 90%;
 }
 
 .cardWrapper img, .cardWrapper a{
     height: 100%;
+    width: 100%;
 }
 
-#cardBody, .cardFooter, #starsCont{
+.cardBody, .cardFooter, #starsCont{
     display: flex;
 }
 
-#cardBody, .cardFooter{
+.cardBody, .cardFooter{
     flex-direction: column;
     align-items: center;
     grid-column: 1;
     grid-row: 1;
+    max-height: 280px;
 }
 
 .cardWrapper, .cardWrapper img{
@@ -43,22 +45,15 @@
     cursor: pointer;
 }
 
-.cardWrapper:hover > div a img {
-    max-height: 280px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    margin-bottom: 0;
-}
+
 
 .cardWrapper img {
     object-fit: cover;
     background-origin: padding-box;
+    max-height: 280px;
 }
 
-.cardWrapper:hover > div.cardFooter {
-    background-color: var(ChocoBlanc);
-    margin-top: 0;
-}
+
 
 .cardWrapper a {
     transition: transform .25s;
@@ -77,6 +72,9 @@
     transition: background-color 1s;
 }
 
+.cardBody {
+
+}
 
 .productName {
     font-weight: bolder;
@@ -103,6 +101,10 @@
 
 
 @media screen and (min-width:768px) {
+.cardWrapper img {
+max-height: unset;
+
+}
     
     .cardWrapper{
     width: 350px;
@@ -112,6 +114,20 @@
     .cardWrapper:hover {
         transform: scale(1.05);
     }
+
+    .cardWrapper:hover > div.cardFooter {
+        background-color: var(ChocoBlanc);
+        margin-top: 0;
+    }
+
+   /* .cardWrapper:hover > div a img {
+        max-height: 280px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-bottom: 0;
+    }*/
+
+
 
 
 }

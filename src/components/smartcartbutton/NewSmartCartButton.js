@@ -4,47 +4,55 @@ import CustomNumberInput from '../CustomNumberInput';
 import './SmartCartButton.css';
 import '../custombutton/CustomButton.css';
 import { type } from '@testing-library/user-event/dist/type';
-//import { type } from '@testing-library/user-event/dist/type';
 
 const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, urlImage, name, price, cartItems, newQte}) => {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [qte, setQte] = useState(newQte);
-    const [localQte, setLocalQte] = useState(0);
+    //const [qte, setQte] = useState(newQte);
+    const [localQte, setLocalQte] = useState(newQte);
 
 
 
+
+    //Fonction qui gère les changements de l'input quantité
 
     const handleInputChange = (e) => {
 
-        setQte(Number(e.target.value));
-        handleItem(e.target.value);
+        e.preventDefault();
+        e.stopPropagation();
+
+        setLocalQte(Number(e.target.value));
+    
+        handleItem(Number(e.target.value));
 
 
     }
 
+//Mobile uniquement : gestion du click sur le bouton moins
+    const increment = (e) => {
 
-    const increment = () => {
-
-setQte(prevCount=>Number(prevCount)+1);
-handleItem(Number(qte+1));
-
-
-
-    }
-
-    const decrement = () => {
-setQte(prevCount=>Number(prevCount)-1);
-handleItem(Number(qte-1));
+        e.preventDefault();
+        e.stopPropagation();
+        setLocalQte(prevCount=>Number(prevCount)+1);
+        handleItem(Number(localQte+1));
 
     }
 
+//Mobile uniquement : gestion du click sur le bouton plus    
+    const decrement = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setLocalQte(prevCount=>Number(prevCount)-1);
+        handleItem(Number(localQte-1));
+
+    }
+
+
+//Fonction qui gère l'ajout ou la suppression d'un item dans le panier en fonction de la quantité envoyée    
     const handleItem = (QteToSend) => {
-
- ;
-
+        console.log("handleItem je recois : "+QteToSend + " qui est du type : "+typeof(QteToSend));
 
 
-        if(QteToSend>0){
+         if(QteToSend>0){
 
 updateItem(id, Number(QteToSend));   
 
@@ -58,34 +66,9 @@ removeItem(id);
 
 
     }
-/*
-useEffect(() => {
 
 
-    if(localQte>0){
-
-        updateItem(id, localQte);   
-        
-            }
-        
-            else if (localQte===0){
-        
-        removeItem(id);
-        
-            }
-
-
-
-
-
-
-
-}, [localQte]);
-*/
-
-
-
-
+ //Gestion de l'affichage du bouton en fonction de la quantité de l'item dans le panier   
     useEffect(() => {
 
         setLocalQte(newQte);     
@@ -99,10 +82,7 @@ useEffect(() => {
             setIsFlipped(false);
             
         }
-      
-        
-
-
+    
     }, [newQte]);
 
     
@@ -116,7 +96,15 @@ useEffect(() => {
               
                 <CustomButton onClick={()=>{gestionCart(id, urlImage, name, price,1)}} text={"Ajouter au panier"}/>
             ) : (
-                <div className='currentCart'><span>Panier : <CustomButton onClick={()=>{decrement()}} text={"-"}/>{/*<input type='button' value="-" onClick={()=>{decrement()}}/>*/}</span><CustomNumberInput id={"cardIpt"+id} change={handleInputChange} value={Number(localQte)} min={0} />{/*<input type='number' id={"ipt"+id} value={localQte} onChange={handleInputChange} />*/}{/*<input type='button' value="+" onClick={()=>{increment()}} />*/} <CustomButton onClick={()=>{increment()}} text={"+"}/></div>
+                <div className='currentCart'>
+                
+                {<span>Panier : </span>}
+                <CustomButton addClass={"visibility"} onClick={(e)=>{decrement(e)}} text={"-"}/>
+                <CustomNumberInput id={"cardIpt"+id} change={handleInputChange} value={Number(localQte)} min={0} />
+                <span className='substitute'>{Number(localQte)}</span>
+                <CustomButton addClass={"visibility"} onClick={(e)=>{increment(e)}} text={"+"}/>
+                
+                </div>
 
             )}
         </div>

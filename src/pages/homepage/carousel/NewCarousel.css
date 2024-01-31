@@ -103,9 +103,9 @@
     font-size: 2em;
     color: var(--ChocoBlanc);
     font-weight: bolder;
-    transition: color 0.5s ease-in-out;
-    transition: background-color 0.5s ease-in-out;
-    transition: border 0.5s ease-in-out;
+    transition: color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+    transition: border 1s ease-in-out;
 
 
 
@@ -123,9 +123,9 @@
     left: 50%;
     transform: translate(-50%,0);
     text-align: center;
-    transition: color 0.5s ease-in-out;
-    transition: background-color 0.5s ease-in-out;
-    transition: border 0.5s ease-in-out;
+    transition: color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+    transition: border 1s ease-in-out;
     
 }
 

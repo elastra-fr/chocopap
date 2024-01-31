@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 function CardProduct({close, showPanier, gestionCart, id, urlImage, name, price, note, getQteItem, cartItems, updateItem, removeItem}) {
 
+
 let starsStatus=["starUnchecked", "starUnchecked", "starUnchecked", "starUnchecked", "starUnchecked"];
 const [localQte, setLocalQte]= useState(getQteItem(id));
 
@@ -24,17 +25,19 @@ setLocalQte(getQteItem(id));
 
 }, [cartItems, getQteItem, id]);
 
+const handleClick = (e) => {e.preventDefault(); e.stopPropagation();console.log("click");};
+
 
   return (
-    <div key={"produit"+id} className='cardWrapper'>
+    <div key={"produit"+id} className='cardWrapper' onClick={handleClick}>
 
-      <div id='cardBody'>
+      <div className='cardBody' onClick={handleClick}>
       <Link to={`/FicheProduit/${id}`} close={close} showPanier={showPanier}>
         <img src={urlImage} alt='Produit'/>
         </Link>
           </div>
        
-        <div className='cardFooter'>
+        <div className='cardFooter' onClick={handleClick}>
           <p className='productName'>{name}</p>
           <p>{price + " €"}</p>
           <div id='starsCont'>

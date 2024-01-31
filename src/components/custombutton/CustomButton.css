@@ -1,6 +1,7 @@
 .customButton {
     background-color: #55C0CF;
-    color: #FFD543;
+    color: var(--ChocoBlanc);
+    font-weight: bolder;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -18,3 +19,28 @@
     background-color: #1F1615;
     color: #B65F28;
 }
+
+.visibility{
+
+display: unset;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    
+    .visibility{
+
+        display: none;
+
+
+
+    }
+   
+    
+}
+
+
+
+
+

@@ -61,7 +61,7 @@
         justify-self: center;
         font-weight: bold;
         font-size: 1.5em;
-        color: var(--ChocoBleu);
+        color: var(--ChocoOrange);
         margin: 15px;
     }
     
@@ -88,7 +88,7 @@
     }
 
     .burgerMenu svg{
-        fill: var(--ChocoMarron);
+        fill: var(--ChocoOrange);
     }
     
     .burgerMenu:active{

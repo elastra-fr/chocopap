@@ -119,6 +119,7 @@ default:
 
 
             fetchProducts();
+            checkCbAll(); 
 
 
         
@@ -151,6 +152,12 @@ const uncheckCbAll=()=>{
 
   const checkboxAll=document.getElementById("all");
   checkboxAll.checked=false;
+
+}
+
+const checkCbAll=()=>{
+  const checkboxAll=document.getElementById("all");
+  checkboxAll.checked=true;
 
 }
 
@@ -376,7 +383,7 @@ return(
 
 <div>
 
-<span id="nbResult">Résultat : {countProduct} produit(s)</span>
+<span id="nbResult">Résultat(s) : {countProduct} produit(s)</span>
 
 </div>
 

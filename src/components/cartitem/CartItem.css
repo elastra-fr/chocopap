@@ -12,10 +12,10 @@
     margin: 15px auto;
     justify-content: space-between;
     align-items: center;
-    background-color:   var(--ChocoMarron);
-    border: 2px solid var(--ChocoMarron);
-    padding: 25px;
+    /*background-color:   var(--ChocoBleu);*/
+    padding: 5px;
     border-radius: 20px;
+    border: 1px solid var(--ChocoBleu);
 }
 
 .cartItemWrapper svg{
@@ -34,29 +34,54 @@
 }
 
 .cartMiniImg{
-    height: 75px;
-    width: 90px;
+    height: 100%;
+    width: 90%;
+   /* min-width: 150px;*/
     object-fit: cover;
     border-radius: 20px;
 }
 
 .cartItemInfos{
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
-    padding: 10px;
-    color: var(--ChocoBlanc);
+    padding: 5px;
+    color: var(--ChocoNoir);
     font-weight: bolder;
+    font-size: 1.2em;
 }
+
+.cartButtonCont{
+display: flex;
+align-items: baseline;
+
+}
+
+.pivotCartButton{
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+
+
+
+}
+
+
+
+
 
 @media screen and (min-width:768px){
 
     .cartItemWrapper{
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 2fr 3fr 1fr;
+        grid-template-columns: 1fr 2fr 3fr;
         
         }
+
+       
+
 
 
 

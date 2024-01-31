@@ -3,6 +3,8 @@ import './CartItem.css'
 import CustomNumberInput from '../CustomNumberInput'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import CustomButton from '../custombutton/CustomButton'
+
 
 function CartItem({ id, src, nom, prix, qte, removeItem, updateItem }) {
   //console.log(updateItem);
@@ -13,6 +15,32 @@ function CartItem({ id, src, nom, prix, qte, removeItem, updateItem }) {
     setLocalQte(event.target.value);
     //updateItem(id, localQte);  
   }
+
+  const increment = (e) => {
+
+    e.preventDefault();
+    e.stopPropagation();
+    setLocalQte(prevCount => Number(prevCount) + 1);
+    updateItem(id, Number(localQte));
+   
+
+  }
+
+const decrement = (e) => {
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    if(Number(localQte)>1){
+
+      setLocalQte(prevCount => Number(prevCount) - 1);
+    updateItem(id, Number(localQte));
+
+    }
+
+    
+
+}
 
   useEffect(() => {
     updateItem(id, localQte);
@@ -33,14 +61,31 @@ function CartItem({ id, src, nom, prix, qte, removeItem, updateItem }) {
       <div>
         <img src={"." + src} alt={nom} className='cartMiniImg' />
       </div>  </Link>
+      
+    <div className='pivotCartButton'>
       <Link to={`/FicheProduit/${id}`} title='Voir la fiche produit'>
       <div className='cartItemInfos'>
         <span>{nom}</span>
         <span>{prix + " €"}</span>
       </div>
       </Link>
-    
-      <CustomNumberInput id={"ipt" + nom} value={localQte} change={handleChange} min={1} />
+
+      <div className='cartButtonCont'>     
+        <CustomButton addClass={"visibility"} onClick={(e)=>{decrement(e)}} text={"-"} />
+         <CustomNumberInput id={"ipt" + nom} value={localQte} change={handleChange} min={1} />
+         <span className='substitute'>{Number(localQte)}</span>
+        <CustomButton addClass={"visibility"} onClick={(e)=>{increment(e)}} text={"+"} />
+
+      </div>
+
+      </div>
+
+
+
+      
+
+
+
     </div>
   )
 }
