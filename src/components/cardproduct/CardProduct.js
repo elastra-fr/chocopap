@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import './CardProducts.css'
 import { Link } from 'react-router-dom'
-import SmartCartButton from '../smartcartbutton/SmartCartButton.js'
 import NewSmartCartButton from '../smartcartbutton/NewSmartCartButton.js'
 import { useState } from 'react'
 

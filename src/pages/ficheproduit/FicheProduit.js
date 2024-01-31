@@ -4,7 +4,7 @@ import Footer from '../../components/footer/Footer'
 import { useParams } from 'react-router-dom'
 import Parse from 'parse/dist/parse.min.js';
 import {useState, useEffect} from 'react';
-import Panier from '../../components/Panier';
+import Panier from '../../components/panier/Panier';
 import { useNavigate } from 'react-router-dom';
 import NewSmartCartButton from '../../components/smartcartbutton/NewSmartCartButton';
 

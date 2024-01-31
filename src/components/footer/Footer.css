@@ -20,7 +20,7 @@
     }
 
 #mainFooter h3{
-    color: var(--ChocoBleu);
+    color: var(--ChocoMarron);
     margin: 5px;
     font-size: 1.3em;
     font-weight: bolder;
@@ -36,12 +36,13 @@
 #socials svg{
     height: 48px;
     width: 48px;
-    fill: var(--ChocoBleu);
+    fill: var(--ChocoMarron);
+    transition: fill 0.8s ease-in-out;
 }
 
 #socials svg:hover{
     cursor: pointer;
-    fill: var(--ChocoMarron);
+    fill: var(--ChocoBleu);
 }
 
     

@@ -4,7 +4,7 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import CardProduct from '../../components/cardproduct/CardProduct';
 import {useState, useEffect} from 'react';
-import Panier from '../../components/Panier';
+import Panier from '../../components/panier/Panier';
 import Parse from 'parse/dist/parse.min.js';
 import CheckBoxWithLabel from '../../components/CheckBoxWithLabel'
 import './Filtres.css';
@@ -413,7 +413,7 @@ return(
 </div>
 
 
-<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem} updateItem={props.updateItem}/>
+<Panier close={handleShowPanier} showPanier={showPanier} emptyCart={props.emptyCart} cartItems={props.cartItems} sumCart={props.sumCart} removeItem={props.removeItem} updateItem={props.updateItem} specBoutique={"specBoutique"}/>
 
 </main>
 

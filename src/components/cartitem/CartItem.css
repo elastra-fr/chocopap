@@ -36,6 +36,7 @@
 .cartMiniImg{
     height: 100%;
     width: 90%;
+    max-height: 100px;
    /* min-width: 150px;*/
     object-fit: cover;
     border-radius: 20px;
@@ -77,10 +78,21 @@ align-items: baseline;
         display: grid;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 2fr 3fr;
+       height: 120px;
         
         }
 
-       
+        .cartItemInfos{align-items: flex-start;}
+
+        .pivotCartButton{
+
+           
+            flex-direction: row;
+            justify-content: space-between;
+        
+        
+        
+        }
 
 
 

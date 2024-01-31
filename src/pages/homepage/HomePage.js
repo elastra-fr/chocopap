@@ -4,7 +4,7 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import NewCarousel from './carousel/NewCarousel';
 import { carouselImg } from '../../components/Data';
-import Panier from '../../components/Panier';
+import Panier from '../../components/panier/Panier';
 import {useState, useEffect} from 'react';
 
 

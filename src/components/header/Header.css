@@ -4,12 +4,13 @@
         z-index: 10;
         background-color: var(--ChocoGris);
         padding-top: 10px;
+
     }
     
     
     .logo{
-        width: 80px;
-        margin: 15px;    
+        width: 40px;
+        margin: 5px;    
     }
     
     .logo:hover{
@@ -37,7 +38,9 @@
         position: relative;
         z-index: 5;
         transition: left 1s;
-        margin-right: 40px;  
+        margin-right: 40px;
+        width: 100%;
+        background-color: var(--ChocoNoir);  
     }
     
     .showNav{
@@ -61,8 +64,9 @@
         justify-self: center;
         font-weight: bold;
         font-size: 1.5em;
-        color: var(--ChocoOrange);
+        color: var(--ChocoBlanc);
         margin: 15px;
+        transition: color 0.8s ease-in-out;
     }
     
     #mainNav ul li:hover{
@@ -83,7 +87,7 @@
     .burgerMenu{
     display: block;
     position: absolute;
-    top: 39px;
+    top: 11px;
     right: 10px;
     }
 
@@ -119,6 +123,11 @@
     
     @media screen and (min-width:768px){
 
+        .logo{
+            width: 80px;   
+            margin-left: 40px; 
+        }
+
         .burgerMenu{
             display: none;
         }
@@ -126,17 +135,20 @@
         #mainHeader{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        min-height: 10vh;
 
     
         }
     
     #mainNav{
     
-        width: 30%;
+        width: 50%;
         top: unset;
         position: static;
         align-self: center;
         height: auto;
+        background-color: unset;
     }
     
      
