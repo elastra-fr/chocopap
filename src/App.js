@@ -26,7 +26,7 @@ function App() {
   }
 
   //Fonction qui calcule le total du panier
-  function totalCart() {
+  const totalCart=()=> {
     let subTotal = [];
     let total = 0;
 
@@ -51,7 +51,7 @@ function App() {
     totalCart();
   }, [cart]);
 
-  //Fonction qui vérifie si un item est déjà dans le panier et qui l'ajoute ou le met à jour
+  //Fonction qui vérifie si un item est déjà dans le panier et qui l'ajoute si inexistant ou le met à jour si existant
   const gestionCart = (id, urlImage, name, pu, nb) => {
     if (localStorage.getItem("myCart")) {
       let cart = JSON.parse(localStorage.getItem("myCart"));
@@ -119,7 +119,7 @@ function App() {
   }
 
   //Fonction qui supprime un item du panier
-  function removeItem(id) {
+  const removeItem=(id) =>{
     let localCart = JSON.parse(localStorage.getItem("myCart"));
     let afterRemove = localCart.filter((item) => item.num.search(id));
     localStorage.setItem("myCart", JSON.stringify(afterRemove));

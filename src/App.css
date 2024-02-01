@@ -55,9 +55,12 @@ h4 {
 
 
 /*****************************Boutique*************************************/
+#products,
+#boutiqueWrapper {
+    display: flex;
+}
 
 #products {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
@@ -85,7 +88,6 @@ h4 {
 
 
 #boutiqueWrapper {
-    display: flex;
     flex-direction: column;
 }
 
@@ -120,16 +122,22 @@ a {
 }
 
 
-#filters, #filters div select {
+#filters,
+#filters div select {
     border-radius: 20px;
     padding: 10px;
 }
 
-.selectCont, .showCat div, .showPrice div, .showNotes div {
-display: flex;
+.selectCont,
+.showCat div,
+.showPrice div,
+.showNotes div {
+    display: flex;
 }
 
-.hideCat div, .hidePrice div, .hideNotes div {
+.hideCat div,
+.hidePrice div,
+.hideNotes div {
     display: none;
 }
 
@@ -155,8 +163,12 @@ display: flex;
 }
 
 .filtreCont h4 {
-    color: var(--ChocoBleu);
+    color: var(--ChocoGris);
     font-size: larger;
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    align-items: center;
 }
 
 
@@ -193,30 +205,50 @@ input[type=checkbox] {
 #catPlus>svg,
 #prixPlus>svg,
 #notesPlus>svg {
-    fill: var(--ChocoOrange);
+    fill: var(--ChocoMarron);
     cursor: pointer;
+    width: 30px;
+    height: 30px;
 }
 
 
 
 
 /****************************Fiche produit seul********************************************/
-#singleProductMain {
+#singleProductMain,
+#backToShop,
+.contCartButton {
     display: flex;
+}
+
+#singleProductMain,
+#backToShop {
     flex-direction: column;
+}
+
+#singleProductMain {
     gap: 20px;
     position: relative;
     margin: 0 auto;
 }
 
-#singleProductMain p {
-    width: 95%;
+#singleProductMain p,
+#singleProductImg {
     margin: 10px auto;
 
 }
 
-#singleProductImg img {
+#singleProductMain p {
+    width: 95%;
+}
+
+#singleProductImg img,
+.contCartButton {
     width: 100%;
+}
+
+
+#singleProductImg img {
     border-radius: 20px;
     object-fit: cover;
     border: 0.5px solid var(--ChocoBleu);
@@ -225,8 +257,6 @@ input[type=checkbox] {
 #singleProductImg {
     max-height: 300px;
     max-width: 95%;
-    margin: 10px auto;
-    object-fit: cover
 }
 
 .singleProductTitle {
@@ -241,7 +271,7 @@ input[type=checkbox] {
     margin-left: 20px;
     margin-bottom: 20px;
     font-size: 2rem;
-    color: var(--ChocoOrange);
+    color: var(--ChocoMarron);
 }
 
 #singleProductIngredients h4 {
@@ -256,8 +286,6 @@ input[type=checkbox] {
     padding: 15px;
     margin-left: 50px;
     font-size: 0.9em;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     text-decoration: underline;
 }
@@ -267,8 +295,6 @@ input[type=checkbox] {
 }
 
 .contCartButton {
-    display: flex;
-    width: 100%;
     justify-content: center;
 }
 
@@ -284,6 +310,7 @@ input[type=checkbox] {
     input[type=number]::-webkit-inner-spin-button {
         opacity: 1;
     }
+
 
     #singleProductMain {
         display: grid;
@@ -349,15 +376,18 @@ input[type=checkbox] {
     }
 
 
-    .hidePrice div, .hideNotes div {
-  
+    .hidePrice div,
+    .hideNotes div {
+
         padding: 5px;
         font-size: larger;
 
     }
 
-    .hideCat div, .hidePrice div, .hideNotes div {
-      display: flex;
+    .hideCat div,
+    .hidePrice div,
+    .hideNotes div {
+        display: flex;
     }
 
     .hideCat div select,

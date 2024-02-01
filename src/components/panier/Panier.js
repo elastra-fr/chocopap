@@ -19,7 +19,7 @@ function Panier({
       className={`${showPanier ? "showPanier" : "hidePanier"} ${specBoutique}`}
     >
       <div id="headerPanier">
-        <div id="panierClose">
+        <div id="panierClose" title="Fermer panier">
           <svg
             onClick={() => close()}
             xmlns="http://www.w3.org/2000/svg"

@@ -21,7 +21,7 @@
     width: 25px;
     height: 25px;
     margin: 10px;
-    fill: var(--ChocoOrange);
+    fill: var(--ChocoMarron);
 }
 
 .cartItemWrapper a:hover{
