@@ -1,85 +1,103 @@
-.carouselWrapper{
+.carouselWrapper {
     background-color: var(--ChocoNoir)
 }
 
-.carousel, .carouselCard, .leftArrow, .rightArrow {
+.carousel,
+.carouselCard,
+.leftArrow,
+.rightArrow {
     display: flex;
 }
 
-.carouselCard, .leftArrow, .rightArrow, .carouselDots, .mainTitle, .mainButton{
+.carouselCard,
+.leftArrow,
+.rightArrow,
+.carouselDots,
+.mainTitle,
+.mainButton {
     position: absolute;
 }
 
-.carousel, .carouselWrapper, .carouselCard, .cardImage, .mainTitle{
+.carousel,
+.carouselWrapper,
+.carouselCard,
+.cardImage,
+.mainTitle {
     width: 100%;
 }
 
-.leftArrow, .rightArrow, .imgDot, .mainButton{
+.leftArrow,
+.rightArrow,
+.imgDot,
+.mainButton {
     cursor: pointer;
 }
 
 
 
-.carousel{
+.carousel {
     height: 80vh;
     max-width: var(--ChocoMaxWidth);
     margin: 0 auto;
 }
-.carouselWrapper{
+
+.carouselWrapper {
     position: relative;
     height: 100%;
 }
 
-.carouselCard{
-    flex:1;
+.carouselCard {
+    flex: 1;
     height: 100%;
     overflow: hidden;
     opacity: 0;
-    pointer-events: none ;
+    pointer-events: none;
     transform: scale(0.8);
     transition: 0.5s ease-in-out;
 }
 
-.cardImage{
+.cardImage {
     object-fit: cover;
 }
 
-.carouselCardActive{
+.carouselCardActive {
     opacity: 1;
     transform: scale(1);
     pointer-events: visible;
 }
 
-.leftArrow, .rightArrow{
-    top:50%;
+.leftArrow,
+.rightArrow {
+    top: 50%;
     justify-content: center;
     align-items: center;
-    background-color: var(--ChocoGreyTransp); 
+    background-color: var(--ChocoGreyTransp);
     padding: 5px;
     border-radius: 50%;
 }
 
-.leftArrow{
+.leftArrow {
     left: 10px;
 }
 
-.rightArrow{
+.rightArrow {
     right: 10px;
-    }
+}
 
-.leftArrow svg, .rightArrow svg{
+.leftArrow svg,
+.rightArrow svg {
     height: 30px;
     width: 30px;
     fill: var(--ChocoBlanc);
 }
 
-.carouselDots{
+.carouselDots {
     bottom: 20px;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
 }
 
-.imgDot{
+.imgDot {
     height: 15px;
     width: 15px;
     background-color: var(--ChocoBlanc);
@@ -88,16 +106,16 @@
     margin-left: 10px;
 }
 
-.imgDot:hover{
+.imgDot:hover {
     transform: scale(1.2);
 }
 
-.imgDotActive{
+.imgDotActive {
 
     background-color: grey;
 }
 
-.mainTitle{
+.mainTitle {
     text-align: center;
     top: 25%;
     font-size: 2em;
@@ -112,7 +130,7 @@
 }
 
 
-.mainButton{
+.mainButton {
     display: block;
     padding: 25px;
     border: 5px solid var(--ChocoMarron);
@@ -121,99 +139,100 @@
     font-weight: bolder;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     text-align: center;
     transition: color 1s ease-in-out;
     transition: background-color 1s ease-in-out;
     transition: border 1s ease-in-out;
-    
+
 }
 
 
 /*Theme blanc photo Acceuil 1*/
 
-.themeMainButton1{
-color: var(--ChocoBleu);
-border: 1px solid var(--ChocoBleu);
-background-color: var(--ChocoNoirTransp);
+.themeMainButton1 {
+    color: var(--ChocoBleu);
+    border: 1px solid var(--ChocoBleu);
+    background-color: var(--ChocoNoirTransp);
 
 }
 
 
-.themeTitle1{
+.themeTitle1 {
 
     color: var(--ChocoNoirTransp);
-        -webkit-text-stroke: 1px var(--ChocoBleu);
-        text-stroke: 1px var(--ChocoBleu);
-        text-shadow: none;
+    -webkit-text-stroke: 1px var(--ChocoBleu);
+    text-stroke: 1px var(--ChocoBleu);
+    text-shadow: none;
 
 }
 
 /*Theme Noir photo Acceuil 2*/
 
-.themeMainButton0{
+.themeMainButton0 {
     color: var(--ChocoNoir);
     border: 1px solid var(--ChocoNoir);
     background-color: var(--ChocoBlancTransp);
-    
-    }
-    
-    
-    .themeTitle0{
-    
-        color: var(--ChocoBlancTransp);
-        -webkit-text-stroke: 1px var(--ChocoNoir);
-        text-stroke: 1px var(--ChocoNoir);
-        text-shadow: none;
-    
-    }
+
+}
+
+
+.themeTitle0 {
+
+    color: var(--ChocoBlancTransp);
+    -webkit-text-stroke: 1px var(--ChocoNoir);
+    text-stroke: 1px var(--ChocoNoir);
+    text-shadow: none;
+
+}
 
 /*Theme Orange Marron photo Acceuil 3*/
 
-.themeMainButton2{
+.themeMainButton2 {
     color: var(--ChocoMarron);
     border: 1px solid var(--ChocoMarron);
     background-color: var(--ChocoOrangeTransp);
-    
+
+}
+
+
+.themeTitle2 {
+
+    color: var(--ChocoOrangeTransp);
+    -webkit-text-stroke: 1px var(--ChocoMarron);
+    text-stroke: 1px var(--ChocoMarron);
+    text-shadow: none;
+
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    .mainTitle {
+        font-size: 3em;
     }
-    
-    
-    .themeTitle2{
-    
-        color: var(--ChocoOrangeTransp);
-        -webkit-text-stroke: 1px var(--ChocoMarron);
-        text-stroke: 1px var(--ChocoMarron);
-        text-shadow: none;
-    
+
+    .mainButton {
+        font-size: 1.5em;
+        padding: 40px;
+
+
+    }
+
+    .leftArrow svg,
+    .rightArrow svg {
+        height: 48px;
+        width: 48px;
     }
 
 
+    .leftArrow {
+        left: 15px;
+    }
 
-@media screen and (min-width:768px){
-
-.mainTitle{
-    font-size: 3em;
-}
-
-.mainButton{
-    font-size: 1.5em;
-    padding: 40px;
-
-
-}
-
-.leftArrow svg, .rightArrow svg{
-    height: 48px;
-    width: 48px;
-}
-
-
-.leftArrow{
-    left: 15px;
-}
-
-.rightArrow{
-    right: 15px;
+    .rightArrow {
+        right: 15px;
     }
 
 }

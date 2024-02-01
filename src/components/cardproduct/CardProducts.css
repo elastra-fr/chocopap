@@ -72,9 +72,6 @@
     transition: background-color 1s;
 }
 
-.cardBody {
-
-}
 
 .productName {
     font-weight: bolder;
@@ -120,12 +117,7 @@ max-height: unset;
         margin-top: 0;
     }
 
-   /* .cardWrapper:hover > div a img {
-        max-height: 280px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        margin-bottom: 0;
-    }*/
+ 
 
 
 

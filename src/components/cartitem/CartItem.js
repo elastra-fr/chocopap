@@ -1,19 +1,19 @@
 import React from 'react'
 import './CartItem.css'
-import CustomNumberInput from '../CustomNumberInput'
+import CustomNumberInput from '../customnumberinput/CustomNumberInput'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CustomButton from '../custombutton/CustomButton'
 
 
 function CartItem({ id, src, nom, prix, qte, removeItem, updateItem }) {
-  //console.log(updateItem);
+ 
 
   const [localQte, setLocalQte] = useState(qte);
 
   const handleChange = (event) => {
     setLocalQte(event.target.value);
-    //updateItem(id, localQte);  
+   
   }
 
   const increment = (e) => {

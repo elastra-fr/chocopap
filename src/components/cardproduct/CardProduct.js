@@ -24,7 +24,7 @@ setLocalQte(getQteItem(id));
 
 }, [cartItems, getQteItem, id]);
 
-const handleClick = (e) => {e.preventDefault(); e.stopPropagation();console.log("click");};
+const handleClick = (e) => {e.preventDefault(); e.stopPropagation();};
 
 
   return (

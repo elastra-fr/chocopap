@@ -1,16 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
 
 function CheckBoxWithLabel({title, value, change}) {
-
-
-
-
-
-
-
-
-
 
   return (
     <div className='checkWithLabel' key={title}>

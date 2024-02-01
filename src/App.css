@@ -1,53 +1,54 @@
-:root{
-    --ChocoBlanc:#FFFFFF;
-    --ChocoBleu:#55C0CF;
-    --ChocoGris:#2C1E1E;
-    --ChocoNoir:#1F1615;
-    --ChocoMarron:#B65F28;
-    --ChocoOrange:#FFD543;
-    --ChocoOrangeTransp:rgba(255, 213, 67, 0.8);
-    --ChocoOrangeTransp2:rgba(255, 213, 67, 0.1);
-    --ChocoBlancTransp:rgba(255, 255, 255, 0.7);
-    --ChocoNoirTransp:rgba(31, 22, 21, 0.7);
-    --ChocoGrisTransp:rgba(44, 30, 30, 0.7);
-    --ChocoGreyTransp:rgba(128, 128, 128, 0.55);
+:root {
+    --ChocoBlanc: #FFFFFF;
+    --ChocoBleu: #55C0CF;
+    --ChocoGris: #2C1E1E;
+    --ChocoNoir: #1F1615;
+    --ChocoMarron: #B65F28;
+    --ChocoOrange: #FFD543;
+    --ChocoOrangeTransp: rgba(255, 213, 67, 0.8);
+    --ChocoOrangeTransp2: rgba(255, 213, 67, 0.1);
+    --ChocoBlancTransp: rgba(255, 255, 255, 0.7);
+    --ChocoNoirTransp: rgba(31, 22, 21, 0.7);
+    --ChocoGrisTransp: rgba(44, 30, 30, 0.7);
+    --ChocoGreyTransp: rgba(128, 128, 128, 0.55);
 
     --ChocoTitres: 'Fjalla One', sans-serif;
     --ChocoTextes: 'Noto Sans', sans-serif;
-    
-    --ChocoMaxWidth:1600px;
+
+    --ChocoMaxWidth: 1600px;
     --ChocoInnerWidth: 1440px;
-    
+
 
 
 }
 
 
-body{
-font-family: var(--ChocoTextes);
-max-width: var(--ChocoMaxWidth);
-margin: 0 auto;
-min-height: 100vh;
-color: var(--ChocoNoir);
-overflow-x: hidden;
-background-color: var(--ChocoBlanc);
-
-
+body {
+    font-family: var(--ChocoTextes);
+    max-width: var(--ChocoMaxWidth);
+    margin: 0 auto;
+    min-height: 100vh;
+    color: var(--ChocoNoir);
+    overflow-x: hidden;
+    background-color: var(--ChocoBlanc);
 }
 
 
 
 
-h1, h2, h3, h4{
-font-family: var(--ChocoTitres);
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ChocoTitres);
 
 }
 
 
 /******************************Home************************************************/
 
-#homeMain{
-position: relative;
+#homeMain {
+    position: relative;
 
 }
 
@@ -56,159 +57,219 @@ position: relative;
 /*****************************Boutique*************************************/
 
 #products {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-evenly;
-align-items: center;
-gap:25px;
-margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+
+.mainBoutique {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    position: relative;
 
 }
 
 
-.mainBoutique{
-display: grid;
-grid-template-rows: 80px 1fr;
-position: relative;
 
+#boutiqueTitle {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: var(--ChocoNoir);
+    margin-top: 10px;
 }
 
 
-
-#boutiqueTitle{
-text-align: center;
-font-size: x-large;
-font-weight: bold;
-color: var(--ChocoNoir);
-margin-top: 10px;
-
+#boutiqueWrapper {
+    display: flex;
+    flex-direction: column;
 }
 
-/*
-#boutiqueTitle::first-letter{
-color: var(--ChocoMarron); 
-font-weight: bolder;
-
- }*/
-
-
-
-#boutiqueWrapper{
-display: flex;
-flex-direction: column;
-
-
-}
-
-.checkWithLabel label, .checkWithLabel input {
-cursor: pointer;
+.checkWithLabel label,
+.checkWithLabel input {
+    cursor: pointer;
 
 }
 
 .checkWithLabel label {
-
     margin-left: 5px;
 }
 
-#nbResult{
-padding: 15px;
-margin-left: 50px;
-font-size: 1.2em;
+#nbResult {
+    padding: 15px;
+    margin-left: 50px;
+    font-size: 1.2em;
 
 }
+
+/*******************************Filtres************************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#filters, #filters div select {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.selectCont, .showCat div, .showPrice div, .showNotes div {
+display: flex;
+}
+
+.hideCat div, .hidePrice div, .hideNotes div {
+    display: none;
+}
+
+#filters {
+    min-width: 300px;
+    margin: 20px;
+    border: 1px solid var(--ChocoBleu);
+    height: fit-content;
+}
+
+
+
+#filters h3 {
+    color: var(--ChocoNoir);
+    margin: 5px;
+    font-size: x-large;
+}
+
+
+.filtreCont {
+    margin: 15px;
+
+}
+
+.filtreCont h4 {
+    color: var(--ChocoBleu);
+    font-size: larger;
+}
+
+
+.filtreContTitle {
+    color: var(--ChocoMarron);
+}
+
+.checkWithLabel {
+    padding: 5px;
+    font-size: larger;
+}
+
+.selectCont {
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+
+
+#filters div select {
+    font-size: 1.2rem;
+    text-align: center;
+    width: fit-content;
+
+}
+
+input[type=checkbox] {
+    accent-color: var(--ChocoMarron);
+    width: 15px;
+
+}
+
+#catPlus>svg,
+#prixPlus>svg,
+#notesPlus>svg {
+    fill: var(--ChocoOrange);
+    cursor: pointer;
+}
+
+
+
 
 /****************************Fiche produit seul********************************************/
-#singleProductMain{
-display: flex;
-flex-direction: column;
-gap: 20px;
-position: relative;
-margin: 0 auto;
+#singleProductMain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    margin: 0 auto;
 }
 
-#singleProductMain p{
-width: 95%;
-margin: 10px auto;
-
-}
-
-#singleProductImg img{
-/*max-height: 300px;
-max-width: 95%;
-margin: 10px auto;
-object-fit: cover;
-
-*/
-
-width: 100%;
-border-radius: 20px;
-object-fit: cover;
-border: 0.5px solid var(--ChocoBleu);
+#singleProductMain p {
+    width: 95%;
+    margin: 10px auto;
 
 }
 
-#singleProductImg{
+#singleProductImg img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 0.5px solid var(--ChocoBleu);
+}
+
+#singleProductImg {
     max-height: 300px;
     max-width: 95%;
     margin: 10px auto;
     object-fit: cover
 }
 
-.singleProductTitle{
-margin-top: 20px;
-margin-left: 20px;
-color: var(--ChocoNoir);
-font-size: 3rem;
-
+.singleProductTitle {
+    margin-top: 20px;
+    margin-left: 20px;
+    color: var(--ChocoNoir);
+    font-size: 3rem;
 }
 
-.singleProductPrice{
+.singleProductPrice {
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
     font-size: 2rem;
-    color: var(--ChocoOrange);    
+    color: var(--ChocoOrange);
+}
 
+#singleProductIngredients h4 {
+    color: var(--ChocoNoir);
+    font-size: larger;
+    margin: 25px;
 }
 
 
-
-
-#singleProductIngredients{
-  /*  margin: 50px;*/
-    
-        }
-    
-        #singleProductIngredients h4{
-            color: var(--ChocoNoir);
-            font-size: larger;
-            margin: 25px;
-                }
-    
-          
-
-
-
-
-#backToShop{
-width: fit-content;
-padding: 15px;
-margin-left: 50px;
-font-size: 0.9em;
-display: flex;
-flex-direction: column;
-justify-content: center;
-text-decoration: underline;
+#backToShop {
+    width: fit-content;
+    padding: 15px;
+    margin-left: 50px;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: underline;
 }
 
-#backToShop:hover{
-cursor: pointer;
+#backToShop:hover {
+    cursor: pointer;
 }
 
-.contCartButton{
-display: flex;
-width: 100%;
-justify-content: center;
+.contCartButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 
@@ -216,24 +277,22 @@ justify-content: center;
 /**************************************Media Queries*******************************/
 
 
-@media screen and (min-width:768px){
+@media screen and (min-width:768px) {
 
-    
 
-    input[type=number]::-webkit-inner-spin-button{
+
+    input[type=number]::-webkit-inner-spin-button {
         opacity: 1;
-        }
+    }
 
-        #singleProductMain{
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.1fr 2fr 2fr;
+    #singleProductMain {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 2fr 2fr;
 
-            
-            
-            }
+    }
 
-    #infosWrapper{
+    #infosWrapper {
 
         display: grid;
         grid-template-rows: 1fr;
@@ -243,48 +302,72 @@ justify-content: center;
         gap: 25px;
         align-items: center;
         margin: 50px;
-        
-    }
-
-    #singleProductInfos{
-width: 100%;
-grid-area: infos;
-display: flex;
-flex-direction: column;
-align-items: center;
 
     }
 
-   
+    #singleProductInfos {
+        width: 100%;
+        grid-area: infos;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-
-
+    }
 
 
     #singleProductImg {
         display: flex;
         grid-area: img;
         border-radius: 20px;
-            }
+    }
 
-        
-
-           
 
 
 
 }
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:1000px) {
 
-    #boutiqueWrapper{
+    #boutiqueWrapper {
         flex-direction: row;
-        
-        
-        }
 
-        
+
+    }
+
+    /***Filtres****/
+
+    #filters {
+
+        position: sticky;
+        top: 12vh;
+    }
+
+    #catPlus,
+    #prixPlus,
+    #notesPlus {
+        display: none;
+    }
+
+
+    .hidePrice div, .hideNotes div {
+  
+        padding: 5px;
+        font-size: larger;
+
+    }
+
+    .hideCat div, .hidePrice div, .hideNotes div {
+      display: flex;
+    }
+
+    .hideCat div select,
+    .hidePrice div select,
+    .hideNotes div select {
+        width: 50%;
+    }
+
+
+
 
 
 }
-

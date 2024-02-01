@@ -5,8 +5,11 @@ Projet réalisé dans le cadre du module 3 de la formation DWWM Epsi.
 
 Frontend d'une boutique en ligne de chocolats.
 
-Utilisation du framework React
+Utilisation du framework React.
+
 Back-end utilisé pour la liste des produits : back4app.
+
+Projet Hebergé à l'adresse : https://choco-pap14.000webhostapp.com/
 
 
 # Getting Started with Create React App

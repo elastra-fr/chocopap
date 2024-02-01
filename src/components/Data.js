@@ -1,6 +1,6 @@
-import Acc1 from '../images/accueil1.avif'
-import Acc2 from '../images/accueil2.avif'
-import Acc3 from '../images/accueil3.avif'
+import Acc1 from '../imgAcc/accueil1.avif'
+import Acc2 from '../imgAcc/accueil2.avif'
+import Acc3 from '../imgAcc/accueil3.avif'
 
 
 

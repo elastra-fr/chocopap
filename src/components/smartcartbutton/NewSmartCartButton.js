@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import CustomButton from '../custombutton/CustomButton';
-import CustomNumberInput from '../CustomNumberInput';
+import CustomNumberInput from '../customnumberinput/CustomNumberInput';
 import './SmartCartButton.css';
 import '../custombutton/CustomButton.css';
-import { type } from '@testing-library/user-event/dist/type';
+
 
 const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, urlImage, name, price, cartItems, newQte}) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -49,7 +49,6 @@ const NewSmartCartButton = ({id, getQte, updateItem, removeItem, gestionCart, ur
 
 //Fonction qui gère l'ajout ou la suppression d'un item dans le panier en fonction de la quantité envoyée    
     const handleItem = (QteToSend) => {
-        console.log("handleItem je recois : "+QteToSend + " qui est du type : "+typeof(QteToSend));
 
 
          if(QteToSend>0){

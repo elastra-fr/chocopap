@@ -1,4 +1,4 @@
-    header{
+    header {
         position: sticky;
         top: 0;
         z-index: 10;
@@ -6,60 +6,57 @@
         padding-top: 10px;
 
     }
-    
-    
-    .logo{
+
+
+    .logo {
         width: 40px;
-        margin: 5px;    
+        margin: 5px;
     }
-    
-    .logo:hover{
+
+    .logo:hover {
         cursor: pointer;
     }
 
-    
-    #panierHeader svg{
+
+    #panierHeader svg {
         width: 35px;
         fill: var(--ChocoOrange);
-        filter: 
-            drop-shadow(-1px -1px 0px var(--ChocoMarron)) 
-            drop-shadow(1px -1px 0px var(--ChocoMarron)) 
-            drop-shadow(1px 1px 0px var(--ChocoMarron))
-            drop-shadow(-1px 1px 0px var(--ChocoMarron))
-        }
-    
-    
-    .imgAcc{
-        left: 90vw;
-        margin: 0 auto;    
+        filter:
+            drop-shadow(-1px -1px 0px var(--ChocoMarron)) drop-shadow(1px -1px 0px var(--ChocoMarron)) drop-shadow(1px 1px 0px var(--ChocoMarron)) drop-shadow(-1px 1px 0px var(--ChocoMarron))
     }
-    
-    #mainNav{
+
+
+    .imgAcc {
+        left: 90vw;
+        margin: 0 auto;
+    }
+
+    #mainNav {
         position: relative;
         z-index: 5;
         transition: left 1s;
         margin-right: 40px;
         width: 100%;
-        background-color: var(--ChocoNoir);  
+        background-color: var(--ChocoNoir);
     }
-    
-    .showNav{
+
+    .showNav {
         left: 0;
         height: auto;
-        }
-    
-    .hideNav{     
+    }
+
+    .hideNav {
         top: -120vh;
         height: 0;
     }
-    
-    #mainNav ul{
+
+    #mainNav ul {
         display: flex;
         flex-direction: column;
         list-style: none;
     }
-    
-    #mainNav ul li{
+
+    #mainNav ul li {
         padding: 5px;
         justify-self: center;
         font-weight: bold;
@@ -68,38 +65,38 @@
         margin: 15px;
         transition: color 0.8s ease-in-out;
     }
-    
-    #mainNav ul li:hover{
+
+    #mainNav ul li:hover {
         cursor: pointer;
         color: var(--ChocoMarron);
     }
 
-    #mainNav ul li:active{
+    #mainNav ul li:active {
         color: var(--ChocoOrange);
     }
-    
-    a{
-        all:unset;
-    
-    }
-    
-    
-    .burgerMenu{
-    display: block;
-    position: absolute;
-    top: 11px;
-    right: 10px;
+
+    a {
+        all: unset;
+
     }
 
-    .burgerMenu svg{
+
+    .burgerMenu {
+        display: block;
+        position: absolute;
+        top: 11px;
+        right: 10px;
+    }
+
+    .burgerMenu svg {
         fill: var(--ChocoOrange);
     }
-    
-    .burgerMenu:active{
+
+    .burgerMenu:active {
         fill: var(--ChocoOrange);
     }
-    
-    #cartCount{
+
+    #cartCount {
         height: 25px;
         width: 25px;
         font-size: 0.9rem;
@@ -111,61 +108,61 @@
         border-radius: 50%;
         display: flex;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
     }
-    
-    main{
+
+    main {
         min-height: 80vh;
     }
-    
-    
-    
-    
-    @media screen and (min-width:768px){
 
-        .logo{
-            width: 80px;   
-            margin-left: 40px; 
+
+
+
+    @media screen and (min-width:768px) {
+
+        .logo {
+            width: 80px;
+            margin-left: 40px;
         }
 
-        .burgerMenu{
+        .burgerMenu {
             display: none;
         }
-        
-        #mainHeader{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 10vh;
 
-    
-        }
-    
-    #mainNav{
-    
-        width: 50%;
-        top: unset;
-        position: static;
-        align-self: center;
-        height: auto;
-        background-color: unset;
-    }
-    
-     
-    
-    
-    #mainNav ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+        #mainHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 10vh;
+
+
         }
 
-        #mainNav ul li:hover{
+        #mainNav {
+
+            width: 50%;
+            top: unset;
+            position: static;
+            align-self: center;
+            height: auto;
+            background-color: unset;
+        }
+
+
+
+
+        #mainNav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #mainNav ul li:hover {
             cursor: pointer;
             color: var(--ChocoMarron);
             scale: 1.2;
-            }
+        }
 
 
 
