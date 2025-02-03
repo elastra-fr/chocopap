@@ -9,7 +9,7 @@ Utilisation du framework React.
 
 Back-end utilisé pour la liste des produits : back4app.
 
-Projet Hebergé à l'adresse : https://choco-pap14.000webhostapp.com/
+Projet Hebergé à l'adresse : https://demo2.eldn-dev-app.fr/Homepage
 
 
 # Getting Started with Create React App
